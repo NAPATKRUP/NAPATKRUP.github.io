@@ -38,6 +38,9 @@ h3{
 img.profile:hover {
 	transform: rotate(20deg);
 }
+img.icon:hover {
+	transform: rotate(20deg);
+}
 .bio{
 	line-height: 1.5;
 }
