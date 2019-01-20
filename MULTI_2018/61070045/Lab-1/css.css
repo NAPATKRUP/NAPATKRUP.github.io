@@ -12,10 +12,10 @@ body {
 	align-items: center;
 }
 #word {
-    display: inline-block;
-    box-shadow: 1px 0px 0px black;
-    padding-right: .1em;
-    animation: pipe .3s infinite alternate;
+	display: inline-block;
+	box-shadow: 1px 0px 0px black;
+	padding-right: .1em;
+	animation: pipe .3s infinite alternate;
 }
 @keyframes pipe{
 	from{box-shadow: 1px 0px 0px black;}
@@ -79,8 +79,8 @@ a:hover{
 li{
 	margin-bottom: .5em;
 }
-.ball {
-  position: absolute;
-  border-radius: 100%;
-  opacity: 0.3;
+.snow {
+	position: absolute;
+	border-radius: 100%;
+	opacity: 0.25;
 }
