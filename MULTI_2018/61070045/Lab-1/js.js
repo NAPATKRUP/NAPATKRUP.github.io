@@ -18,7 +18,6 @@ function myFuncalert() {
 //My Snow
 const numSnows = 100;
 const snows = [];
-
 for (let i = 0; i < numSnows; i++) {
 	let snow = document.createElement("div");
 	snow.classList.add("snow");
@@ -28,15 +27,16 @@ for (let i = 0; i < numSnows; i++) {
 	snow.style.transform = `scale(${Math.random()})`;
 	snow.style.width = `${Math.random()}em`;
 	snow.style.height = snow.style.width;
-
 	snows.push(snow);
 	document.body.append(snow);
 }
 snows.forEach((elementsnow, number) => {
+	console.log(elementsnow);
 	let to = {
 		x: Math.random()*(number%2 === 0 ? -11 : 11),
 		y: Math.random()*12
 	}
+	console.log(to.x, to.y);
 	let animation = elementsnow.animate(
 		[
 			{ transform: "translate(0, 0)" },
