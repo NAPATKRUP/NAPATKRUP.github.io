@@ -39,7 +39,8 @@ img.profile:hover {
 	transform: rotate(20deg);
 }
 img.icon:hover {
-	transform: rotate(20deg);
+	transition: all .3s;
+	transform: rotate(25deg);
 	cursor: url("image/snowman.png"), auto;
 }
 .sclick {
