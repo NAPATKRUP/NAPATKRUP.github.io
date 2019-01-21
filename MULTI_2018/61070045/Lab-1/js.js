@@ -31,12 +31,10 @@ for (let i = 0; i < numSnows; i++) {
 	document.body.append(snow);
 }
 snows.forEach((elementsnow, number) => {
-	console.log(elementsnow);
 	let to = {
 		x: Math.random()*(number%2 === 0 ? -11 : 11),
 		y: Math.random()*12
 	}
-	console.log(to.x, to.y);
 	let animation = elementsnow.animate(
 		[
 			{ transform: "translate(0, 0)" },
