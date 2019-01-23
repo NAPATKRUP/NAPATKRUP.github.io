@@ -129,8 +129,8 @@ li {
 	height: 100px;
 }
 #load hr{
-	width: 30%;
-	height: 30%;
+	width: calc(40% - 4px);
+	height: calc(40% - 4px);
 	position: absolute;
 	border: 4px solid #000000;
 	border-radius: 25%;
