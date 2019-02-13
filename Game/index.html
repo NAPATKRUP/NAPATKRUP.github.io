@@ -1,0 +1,284 @@
+<html>
+  <head>
+    <title>HIT Dancing Duck | 61070045</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=500, initial-scale=1">
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-image: url(background.gif);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        animation: bg 1s infinite alternate linear;
+        color: white;
+        text-shadow: 0px 0px 8px #03A9F4;
+        margin: 0;
+        cursor: url(http://www.rw-designer.com/cursor-view/102607.png),auto;
+        touch-action:none;
+      }
+      a {
+        color:hsl(187, 100%, 42%);
+      }
+      h1.headtitle {
+        margin-top: 1em;
+        font-size: 3em;
+        text-align: center;
+        color: hsl(180,100%,50%);
+        animation: glowing .7s infinite;
+      }
+      h1, h2, h3 {
+        text-align: center;
+        color: white;
+      }
+      h2.time {
+        color: hsl(0,100%,50%);
+        animation: glowing .2s infinite;
+      }
+      @keyframes glowing {
+        from{text-shadow : 0px 0px 100px}
+        to{text-shadow: 0px 0px 50px}
+      }
+      game {
+        display: block;
+        margin: 1em auto;
+        width: 400px;
+        height: 400px;
+        background: rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #86d9ff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px #03A9F4;
+        cursor: url(http://www.rw-designer.com/cursor-view/102658.gif),auto;
+      }
+      pit {
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: transform .5s, background-size .5s;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      pit[y="1"]{
+          top:100px;
+      }
+      pit[y="2"]{
+          top:200px;
+      }
+      pit[y="3"]{
+          top:300px;
+      }
+      pit[x="1"]{
+          left:100px;
+      }
+      pit[x="2"]{
+          left:200px;
+      }
+      pit[x="3"]{
+          left:300px;
+      }
+      pit[status="mole"] {
+        background: url('duck.gif');
+        background-size: 100px 100px;
+      }
+      pit[status="die"] {
+        background: rgba(0, 250, 0, 0.5);
+        background-size: 100px 100px;
+      }
+      pit[status="miss"] {
+        background: url('fire.gif');
+        background: rgba(250, 0, 0, 0.5);
+        background-size: 100px 100px;
+      }
+      .snow {
+        position: absolute;
+        border-radius: 100%;
+        opacity: 0.25;
+      }
+      .preload{
+          width: 1px;
+          height: 1px;
+          opacity: 0;
+      }
+      </style>
+    </head>
+  <body>
+    <h1 class="headtitle">HIT Dancing Duck</h1>
+    <h2 id="subTitle">Loading...</h2>
+    <img src="duck.gif" class="preload">
+    <img src="fire.gif" class="preload">
+    <game>
+      <pit x="0" y="0" status="blank" onclick="hit(this)"></pit>
+      <pit x="1" y="0" status="blank" onclick="hit(this)"></pit>
+      <pit x="2" y="0" status="blank" onclick="hit(this)"></pit>
+      <pit x="3" y="0" status="blank" onclick="hit(this)"></pit>
+      <pit x="0" y="1" status="blank" onclick="hit(this)"></pit>
+      <pit x="1" y="1" status="blank" onclick="hit(this)"></pit>
+      <pit x="2" y="1" status="blank" onclick="hit(this)"></pit>
+      <pit x="3" y="1" status="blank" onclick="hit(this)"></pit>
+      <pit x="0" y="2" status="blank" onclick="hit(this)"></pit>
+      <pit x="1" y="2" status="blank" onclick="hit(this)"></pit>
+      <pit x="2" y="2" status="blank" onclick="hit(this)"></pit>
+      <pit x="3" y="2" status="blank" onclick="hit(this)"></pit>
+      <pit x="0" y="3" status="blank" onclick="hit(this)"></pit>
+      <pit x="1" y="3" status="blank" onclick="hit(this)"></pit>
+      <pit x="2" y="3" status="blank" onclick="hit(this)"></pit>
+      <pit x="3" y="3" status="blank" onclick="hit(this)"></pit>
+    </game>
+    <h2 class="time">Time Left : <span id="theTime">10</span> seconds</h2>
+    <h1>Score : <span id="theScore">0</span></h1>
+    <audio id="bgm" preload="auto" loop="">
+      <source src="bgm.mp3" type="audio/ogg">
+    </audio>
+    <audio id="hit" preload="auto">
+      <source src="hit.wav" type="audio/ogg">
+    </audio>
+    <audio id="miss" preload="auto">
+      <source src="miss.mp3" type="audio/ogg">
+    </audio>
+    <audio id="birth" preload="auto">
+      <source src="birth.wav" type="audio/ogg">
+    </audio>
+  <script>
+    pits = document.querySelectorAll('pit');
+    preparing = 5;
+    birth = 1000;
+    delay = 3000;
+    function ready(){
+        score = 0;
+        time = 30;
+        updateTime();
+        updatScore();
+        for (var i = 0; i < pits.length; i++) {
+            pits[i].setAttribute("status","blank");
+        }
+        for (let i = 0; i < preparing; i++) {
+            setTimeout(
+                function(){
+                    console.log(i);
+                    subTitle.innerText = "Ready! Game start in "+(preparing-i);
+                    sound('hit');
+                },i*1000);
+        }
+        setTimeout(
+            function(){
+                subTitle.innerText = "Let's hit it!";
+                countdown();
+                reloadMole();
+            }
+            ,preparing*1000);
+    }
+    function countdown(){
+        cd = setInterval(
+            function(){
+                if (time > 0) {
+                    time--;
+                    updateTime();
+                }
+                else{
+                    clearInterval(cd);
+                    console.log("END");
+                }
+            }
+            ,1000)
+    }
+    function reloadMole(){
+        if (time>0) {
+            var randomPit = Math.floor(Math.random() * 16);
+            pits[randomPit].setAttribute("status","mole");
+            sound('birth');
+            setTimeout(
+                function(){
+                    if (time>0) {
+                        pits[randomPit].setAttribute("status","blank");
+                    }
+                }
+                ,delay);
+            setTimeout(
+                function(){
+                reloadMole()
+            }
+            ,birth);
+        }
+    }
+    function hit(pit){
+        if (time>0) {
+            var status = pit.getAttribute("status");
+            if (status == "mole") {
+                pit.setAttribute("status","die");
+                score++;
+                sound('hit');
+                subTitle.innerText = "score+1";
+            }
+            else if(status == "blank"){
+                pit.setAttribute("status","miss");
+                score--;
+                sound('miss');
+                subTitle.innerText = "score-1";
+            }
+            updatScore();
+        }
+    }
+    function updatScore(){
+        theScore.innerText = score;
+    }
+    function updateTime(){
+        theTime.innerText = time;
+        if (time == 0) {
+            subTitle.innerHTML = "<a href='#!' onclick='ready()'>Play Again</a>";
+        }
+    }
+
+    function sound(id){
+        document.getElementById(id).play();
+    }
+    var bgmi = 0;
+    function playbgm(){
+        if (bgmi==0) {
+            sound('bgm');
+            bgm++;
+        }
+    }
+    window.onload = function(){
+        ready();
+        setTimeout(function(){playbgm()},500);
+    }
+    const snows = [];
+    for (let i = 0; i < 100; i++) {
+      let snow = document.createElement("div");
+      snow.classList.add("snow");
+      snow.style.background = "#FFFFFF";
+      snow.style.left = `${Math.floor(Math.random()*100)}vw`;
+      snow.style.top = `${Math.floor(Math.random()*100)}vh`;
+      snow.style.transform = `scale(${Math.random()})`;
+      snow.style.width = `${Math.random()}em`;
+      snow.style.height = snow.style.width;
+      snows.push(snow);
+      document.body.append(snow);
+    }
+    snows.forEach((elementsnow, number) => {
+      let to = {
+        x: Math.random()*(number%2 === 0 ? -11 : 11),
+        y: Math.random()*12
+      }
+      let animation = elementsnow.animate(
+        [
+          { transform: "translate(0, 0)" },
+          { transform: `translate(${to.x}em, ${to.y}em)` }
+        ],
+        {
+        duration: (Math.random() + 1)*5000,
+        direction: "alternate",
+        fill: "both",
+        iterations: Infinity,
+        easing: "ease-in-out"
+        }
+      );
+    });
+   </script>
+  </body>
+</html>
