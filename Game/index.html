@@ -2,7 +2,7 @@
   <head>
     <title>HIT Dancing Duck | 61070045</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=500, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
       body {
         font-family: sans-serif;
@@ -10,11 +10,11 @@
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        animation: bg 1s infinite alternate linear;
+        animation: background 1s infinite alternate linear;
         color: white;
         text-shadow: 0px 0px 8px #03A9F4;
         margin: 0;
-        cursor: url(http://www.rw-designer.com/cursor-view/102607.png),auto;
+        cursor: url(hold.png),auto;
         touch-action:none;
       }
       a {
@@ -30,6 +30,9 @@
       h1, h2, h3 {
         text-align: center;
         color: white;
+      }
+      h2.status {
+
       }
       h2.time {
         color: hsl(0,100%,50%);
@@ -50,7 +53,7 @@
         border: 2px solid #86d9ff;
         border-radius: 10px;
         box-shadow: 0px 0px 20px #03A9F4;
-        cursor: url(http://www.rw-designer.com/cursor-view/102658.gif),auto;
+        cursor: url(cursor.png),auto;
       }
       pit {
         display: block;
@@ -83,16 +86,13 @@
       }
       pit[status="mole"] {
         background: url('duck.gif');
-        background-size: 100px 100px;
+        background-size: cover;
       }
       pit[status="die"] {
         background: rgba(0, 250, 0, 0.5);
-        background-size: 100px 100px;
       }
       pit[status="miss"] {
-        background: url('fire.gif');
         background: rgba(250, 0, 0, 0.5);
-        background-size: 100px 100px;
       }
       .snow {
         position: absolute;
@@ -161,12 +161,14 @@
                 function(){
                     console.log(i);
                     subTitle.innerText = "Ready! Game start in "+(preparing-i);
+                    subTitle.style.color = "#FFFFFF";
                     sound('hit');
                 },i*1000);
         }
         setTimeout(
             function(){
                 subTitle.innerText = "Let's hit it!";
+                subTitle.style.color = "#FFFFFF";
                 countdown();
                 reloadMole();
             }
@@ -212,13 +214,15 @@
                 pit.setAttribute("status","die");
                 score++;
                 sound('hit');
-                subTitle.innerText = "score+1";
+                subTitle.innerText = "score + 1";
+                subTitle.style.color = "#00FF00";
             }
             else if(status == "blank"){
                 pit.setAttribute("status","miss");
                 score--;
                 sound('miss');
-                subTitle.innerText = "score-1";
+                subTitle.innerText = "score - 1";
+                subTitle.style.color = "#FF0000";
             }
             updatScore();
         }
