@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
+      @import url("https://fontlibrary.org/face/mr-pixel");
       body {
-        font-family: sans-serif;
+        font-family: 'VTFMisterPixelRegular';
+        font-weight: normal;
+        font-style: normal;
         background-image: url(background.gif);
         background-size: cover;
         background-position: center;
@@ -17,42 +20,62 @@
         cursor: url(hold.png),auto;
         touch-action: none;
       }
+      #main {
+        display: none;
+      }
       #gameover {
+        display: none;
         background: rgba(0, 0, 0, 0.5);
         background-size: cover;
-        margin: 5vh;
+        margin: 5vw;
+        padding: 5%;
+        border: 2px solid #86d9ff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px #03A9F4;
+      }
+      #gamestart {
+        display: block;
+        background: rgba(0, 0, 0, 0.5);
+        background-size: cover;
+        margin: 5vw;
         padding: 5%;
         border: 2px solid #86d9ff;
         border-radius: 10px;
         box-shadow: 0px 0px 20px #03A9F4;
       }
       a {
-        font-size: 5vh;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 1%;
+        border: 2px solid #86d9ff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px #03A9F4;
+        font-size: 4vh;
         color:hsl(187, 100%, 42%);
         cursor: url(cursor.png),auto;
       }
       h1.headtitle {
         margin-top: 1em;
-        font-size: 5vh;
+        font-size: 7vh;
         text-align: center;
         color: hsl(180,100%,50%);
         animation: glowing .7s infinite;
       }
       h1.yourscore {
-        font-size: 5vh;
+        font-size: 4vh;
       }
       h1.timeleft {
-        font-size: 10vh;
-        text-align: center;
+        font-size: 10vw;
         color: hsl(360,100%,50%);
+        animation: glowing .7s infinite;
+      }
+      h1.open {
+        font-size: 10vw;
+        color: rgb(251, 255, 0);
         animation: glowing .7s infinite;
       }
       h1, h2, h3 {
         text-align: center;
         color: white;
-      }
-      h2.status {
-
       }
       h2.time {
         color: hsl(0,100%,50%);
@@ -131,13 +154,19 @@
         opacity: 0.25;
       }
       .preload{
-          width: 1px;
-          height: 1px;
-          opacity: 0;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
       }
       </style>
     </head>
   <body>
+    <div id="gamestart">
+      <center>
+        <h1 class="open">Are you ready !!</h1>
+        <a href='#!' onclick='startgame()'>Start</a>
+      </center>
+    </div>
     <div id="main">
       <h1 class="headtitle">HIT Dancing Duck</h1>
       <h2 id="subTitle">Loading...</h2>
@@ -165,17 +194,32 @@
       </game>
       <h2 class="time">Time Left : <span id="theTime">10</span> seconds</h2>
       <h1>Score : <span id="theScore">0</span></h1>
-      <audio id="bgm" preload="auto" loop="">
-        <source src="bgm.mp3" type="audio/ogg">
+      <audio id="bgm">
+        <source src="bg.mp3" type="audio/ogg">
       </audio>
-      <audio id="hit" preload="auto">
-        <source src="hit.wav" type="audio/ogg">
+      <audio id="hit">
+        <source src="hit.mp3" type="audio/ogg">
       </audio>
-      <audio id="miss" preload="auto">
-        <source src="miss.mp3" type="audio/ogg">
+      <audio id="miss">
+        <source src="nope.mp3" type="audio/ogg">
       </audio>
-      <audio id="birth" preload="auto">
-        <source src="birth.wav" type="audio/ogg">
+      <audio id="quack">
+        <source src="quack.mp3" type="audio/ogg">
+      </audio>
+      <audio id="lion">
+        <source src="lion.wav" type="audio/ogg">
+      </audio>
+      <audio id="rat">
+        <source src="rat.wav" type="audio/ogg">
+      </audio>
+      <audio id="bomb">
+        <source src="bomb.wav" type="audio/ogg">
+      </audio>
+      <audio id="toom">
+        <source src="toom.wav" type="audio/ogg">
+      </audio>
+      <audio id="lefttime">
+        <source src="left.mp3" type="audio/ogg">
       </audio>
     </div>
     <div id="gameover">
@@ -186,10 +230,18 @@
       </center>
     </div>
   <script>
+    function sound(id){
+      document.getElementById(id).play();
+    }
     pits = document.querySelectorAll('pit');
     preparing = 5;
-    birth = 800;
-    delay = 2400;
+    birth = 2000;
+    delay = 3500;
+    function startgame(){
+      document.getElementById("main").style.display = "block";
+      document.getElementById("gamestart").style.display = "none";
+      ready();
+    }
     function ready(){
         document.getElementById("main").style.display = "block";
         document.getElementById("gameover").style.display = "none";
@@ -206,7 +258,7 @@
                     console.log(i);
                     subTitle.innerText = "Ready! Game start in "+(preparing-i);
                     subTitle.style.color = "#FFFFFF";
-                    sound('hit');
+                    sound('bgm');
                 },i*1000);
         }
         setTimeout(
@@ -235,20 +287,23 @@
     function reloadMole(){
         if (time>0) {
             var randomPit = Math.floor(Math.random() * 16);
-            var monster = Math.floor((Math.random()*10)%4);
+            var monster = Math.floor(Math.random()*10)%4;
             if (monster == 0) {
               pits[randomPit].setAttribute("status","duck");
+              sound('quack');
             }
             else if (monster == 1) {
               pits[randomPit].setAttribute("status","lion");
+              sound('lion');
             }
             else if (monster == 2) {
               pits[randomPit].setAttribute("status","rat");
+              sound('rat');
             }
             else {
               pits[randomPit].setAttribute("status","bomb");
+              sound('bomb');
             }
-            sound('birth');
             setTimeout(
                 function(){
                     if (time>0) {
@@ -288,12 +343,13 @@
                 if (status == "bomb") {
                   score -= 2;
                   subTitle.innerText = "score - 2";
+                  sound('toom');
                 }
                 else {
                   score -= 1;
                   subTitle.innerText = "score - 1";
+                  sound('miss');
                 }
-                sound('miss');
                 subTitle.style.color = "#FF0000";
             }
             updatScore();
@@ -305,27 +361,15 @@
     function updateTime(){
         theTime.innerText = time;
         if (time == 0) {
+              sound('lefttime');
               document.getElementById("main").style.display = "none";
+              document.getElementById("gamestart").style.display = "none";
               document.getElementById("gameover").style.display = "block";
               endScore.innerText = score;
             }
 
     }
 
-    function sound(id){
-        document.getElementById(id).play();
-    }
-    var bgmi = 0;
-    function playbgm(){
-        if (bgmi==0) {
-            sound('bgm');
-            bgm++;
-        }
-    }
-    window.onload = function(){
-        ready();
-        setTimeout(function(){playbgm()},500);
-    }
     const snows = [];
     for (let i = 0; i < 100; i++) {
       let snow = document.createElement("div");
