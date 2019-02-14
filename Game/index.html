@@ -1,15 +1,16 @@
 <html>
   <head>
-    <title>HIT Dancing Duck | 61070045</title>
+    <link rel="icon" type="image/gif" sizes="16x16" href="./image/duck.gif">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIT Dancing Duck | 61070045</title>
     <style type="text/css">
       @import url("https://fontlibrary.org/face/mr-pixel");
       body {
         font-family: 'VTFMisterPixelRegular';
         font-weight: normal;
         font-style: normal;
-        background-image: url(background.gif);
+        background-image: url(./image/background.gif);
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -17,7 +18,7 @@
         color: white;
         text-shadow: 0px 0px 8px #03A9F4;
         margin: 0;
-        cursor: url(hold.png),auto;
+        cursor: url(./image/hold.png),auto;
         touch-action: none;
       }
       #main {
@@ -51,7 +52,7 @@
         box-shadow: 0px 0px 20px #03A9F4;
         font-size: 4vh;
         color:hsl(187, 100%, 42%);
-        cursor: url(cursor.png),auto;
+        cursor: url(./image/cursor.png),auto;
       }
       h1.headtitle {
         margin-top: 1em;
@@ -96,7 +97,7 @@
         border: 2px solid #86d9ff;
         border-radius: 10px;
         box-shadow: 0px 0px 20px #03A9F4;
-        cursor: url(cursor.png),auto;
+        cursor: url(./image/cursor.png),auto;
       }
       pit {
         display: block;
@@ -128,19 +129,19 @@
           left:300px;
       }
       pit[status="duck"] {
-        background: url('duck.gif');
+        background: url('./image/duck.gif');
         background-size: 100px 100px;
       }
       pit[status="lion"] {
-        background: url('lion.gif');
+        background: url('./image/lion.gif');
         background-size: 100px 100px;
       }
       pit[status="rat"] {
-        background: url('rat.gif');
+        background: url('./image/rat.gif');
         background-size: 100px 100px;
       }
       pit[status="bomb"] {
-        background: url('bomb.gif');
+        background: url('./image/bomb.gif');
         background-size: 100px 100px;
       }
       pit[status="collect"] {
@@ -163,17 +164,17 @@
   <body>
     <div id="gamestart">
       <center>
-        <h1 class="open">Are you ready !!</h1>
+        <h1 class="open">>> Are you ready</h1>
         <a href='#!' onclick='startgame()'>Start</a>
       </center>
     </div>
     <div id="main">
       <h1 class="headtitle">HIT Dancing Duck</h1>
       <h2 id="subTitle">Loading...</h2>
-      <img src="duck.gif" class="preload">
-      <img src="lion.gif" class="preload">
-      <img src="rat.gif" class="preload">
-      <img src="bomb.gif" class="preload">
+      <img src="./image/duck.gif" class="preload">
+      <img src="./image/lion.gif" class="preload">
+      <img src="./image/rat.gif" class="preload">
+      <img src="./image/bomb.gif" class="preload">
       <game>
         <pit x="0" y="0" status="blank" onclick="hit(this)"></pit>
         <pit x="1" y="0" status="blank" onclick="hit(this)"></pit>
@@ -195,37 +196,37 @@
       <h2 class="time">Time Left : <span id="theTime">10</span> seconds</h2>
       <h1>Score : <span id="theScore">0</span></h1>
       <audio id="bgm">
-        <source src="bg.mp3" type="audio/ogg">
+        <source src="./song/bg.mp3" type="audio/ogg">
       </audio>
       <audio id="hit">
-        <source src="hit.mp3" type="audio/ogg">
+        <source src="./song/hit.mp3" type="audio/ogg">
       </audio>
       <audio id="miss">
-        <source src="nope.mp3" type="audio/ogg">
+        <source src="./song/nope.mp3" type="audio/ogg">
       </audio>
       <audio id="quack">
-        <source src="quack.mp3" type="audio/ogg">
+        <source src="./song/quack.mp3" type="audio/ogg">
       </audio>
       <audio id="lion">
-        <source src="lion.wav" type="audio/ogg">
+        <source src="./song/lion.wav" type="audio/ogg">
       </audio>
       <audio id="rat">
-        <source src="rat.wav" type="audio/ogg">
+        <source src="./song/rat.wav" type="audio/ogg">
       </audio>
       <audio id="bomb">
-        <source src="bomb.wav" type="audio/ogg">
+        <source src="./song/bomb.wav" type="audio/ogg">
       </audio>
       <audio id="toom">
-        <source src="toom.wav" type="audio/ogg">
+        <source src="./song/toom.wav" type="audio/ogg">
       </audio>
       <audio id="lefttime">
-        <source src="left.mp3" type="audio/ogg">
+        <source src="./song/left.mp3" type="audio/ogg">
       </audio>
     </div>
     <div id="gameover">
       <center>
-        <h1 class="timeleft">GameOver</h1>
-        <h1 class="yourscore">Score : <span id="endScore">0</span></h1>
+        <h1 class="timeleft">>> GameOver</h1>
+        <h1 class="yourscore">Score : <span id="endScore">0</span></h1><br>
         <a href='#!' onclick='ready()'>Play Again</a>
       </center>
     </div>
@@ -245,6 +246,7 @@
     function ready(){
         document.getElementById("main").style.display = "block";
         document.getElementById("gameover").style.display = "none";
+        sound('bgm');
         score = 0;
         time = 30;
         updateTime();
@@ -258,7 +260,6 @@
                     console.log(i);
                     subTitle.innerText = "Ready! Game start in "+(preparing-i);
                     subTitle.style.color = "#FFFFFF";
-                    sound('bgm');
                 },i*1000);
         }
         setTimeout(
@@ -363,7 +364,6 @@
         if (time == 0) {
               sound('lefttime');
               document.getElementById("main").style.display = "none";
-              document.getElementById("gamestart").style.display = "none";
               document.getElementById("gameover").style.display = "block";
               endScore.innerText = score;
             }
