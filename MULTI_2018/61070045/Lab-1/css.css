@@ -102,7 +102,7 @@ li {
 	}
 }
 .snow {
-	position: absolute;
+	position: fixed;
 	border-radius: 100%;
 	opacity: 0.25;
 }
