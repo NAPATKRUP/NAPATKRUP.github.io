@@ -15,16 +15,36 @@
         text-shadow: 0px 0px 8px #03A9F4;
         margin: 0;
         cursor: url(hold.png),auto;
-        touch-action:none;
+        touch-action: none;
+      }
+      #gameover {
+        background: rgba(0, 0, 0, 0.5);
+        background-size: cover;
+        margin: 5%;
+        padding: 5%;
+        border: 2px solid #86d9ff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px #03A9F4;
       }
       a {
+        font-size: 3em;
         color:hsl(187, 100%, 42%);
+        cursor: url(cursor.png),auto;
       }
       h1.headtitle {
         margin-top: 1em;
         font-size: 3em;
         text-align: center;
         color: hsl(180,100%,50%);
+        animation: glowing .7s infinite;
+      }
+      h1.yourscore {
+        font-size: 3em;
+      }
+      h1.timeleft {
+        font-size: 7em;
+        text-align: center;
+        color: hsl(360,100%,50%);
         animation: glowing .7s infinite;
       }
       h1, h2, h3 {
@@ -84,11 +104,23 @@
       pit[x="3"]{
           left:300px;
       }
-      pit[status="mole"] {
+      pit[status="duck"] {
         background: url('duck.gif');
-        background-size: cover;
+        background-size: 100px 100px;
       }
-      pit[status="die"] {
+      pit[status="lion"] {
+        background: url('lion.gif');
+        background-size: 100px 100px;
+      }
+      pit[status="rat"] {
+        background: url('rat.gif');
+        background-size: 100px 100px;
+      }
+      pit[status="bomb"] {
+        background: url('bomb.gif');
+        background-size: 100px 100px;
+      }
+      pit[status="collect"] {
         background: rgba(0, 250, 0, 0.5);
       }
       pit[status="miss"] {
@@ -96,7 +128,6 @@
       }
       .snow {
         position: absolute;
-        border-radius: 100%;
         opacity: 0.25;
       }
       .preload{
@@ -107,48 +138,61 @@
       </style>
     </head>
   <body>
-    <h1 class="headtitle">HIT Dancing Duck</h1>
-    <h2 id="subTitle">Loading...</h2>
-    <img src="duck.gif" class="preload">
-    <img src="fire.gif" class="preload">
-    <game>
-      <pit x="0" y="0" status="blank" onclick="hit(this)"></pit>
-      <pit x="1" y="0" status="blank" onclick="hit(this)"></pit>
-      <pit x="2" y="0" status="blank" onclick="hit(this)"></pit>
-      <pit x="3" y="0" status="blank" onclick="hit(this)"></pit>
-      <pit x="0" y="1" status="blank" onclick="hit(this)"></pit>
-      <pit x="1" y="1" status="blank" onclick="hit(this)"></pit>
-      <pit x="2" y="1" status="blank" onclick="hit(this)"></pit>
-      <pit x="3" y="1" status="blank" onclick="hit(this)"></pit>
-      <pit x="0" y="2" status="blank" onclick="hit(this)"></pit>
-      <pit x="1" y="2" status="blank" onclick="hit(this)"></pit>
-      <pit x="2" y="2" status="blank" onclick="hit(this)"></pit>
-      <pit x="3" y="2" status="blank" onclick="hit(this)"></pit>
-      <pit x="0" y="3" status="blank" onclick="hit(this)"></pit>
-      <pit x="1" y="3" status="blank" onclick="hit(this)"></pit>
-      <pit x="2" y="3" status="blank" onclick="hit(this)"></pit>
-      <pit x="3" y="3" status="blank" onclick="hit(this)"></pit>
-    </game>
-    <h2 class="time">Time Left : <span id="theTime">10</span> seconds</h2>
-    <h1>Score : <span id="theScore">0</span></h1>
-    <audio id="bgm" preload="auto" loop="">
-      <source src="bgm.mp3" type="audio/ogg">
-    </audio>
-    <audio id="hit" preload="auto">
-      <source src="hit.wav" type="audio/ogg">
-    </audio>
-    <audio id="miss" preload="auto">
-      <source src="miss.mp3" type="audio/ogg">
-    </audio>
-    <audio id="birth" preload="auto">
-      <source src="birth.wav" type="audio/ogg">
-    </audio>
+    <div id="main">
+      <h1 class="headtitle">HIT Dancing Duck</h1>
+      <h2 id="subTitle">Loading...</h2>
+      <img src="duck.gif" class="preload">
+      <img src="lion.gif" class="preload">
+      <img src="rat.gif" class="preload">
+      <img src="bomb.gif" class="preload">
+      <game>
+        <pit x="0" y="0" status="blank" onclick="hit(this)"></pit>
+        <pit x="1" y="0" status="blank" onclick="hit(this)"></pit>
+        <pit x="2" y="0" status="blank" onclick="hit(this)"></pit>
+        <pit x="3" y="0" status="blank" onclick="hit(this)"></pit>
+        <pit x="0" y="1" status="blank" onclick="hit(this)"></pit>
+        <pit x="1" y="1" status="blank" onclick="hit(this)"></pit>
+        <pit x="2" y="1" status="blank" onclick="hit(this)"></pit>
+        <pit x="3" y="1" status="blank" onclick="hit(this)"></pit>
+        <pit x="0" y="2" status="blank" onclick="hit(this)"></pit>
+        <pit x="1" y="2" status="blank" onclick="hit(this)"></pit>
+        <pit x="2" y="2" status="blank" onclick="hit(this)"></pit>
+        <pit x="3" y="2" status="blank" onclick="hit(this)"></pit>
+        <pit x="0" y="3" status="blank" onclick="hit(this)"></pit>
+        <pit x="1" y="3" status="blank" onclick="hit(this)"></pit>
+        <pit x="2" y="3" status="blank" onclick="hit(this)"></pit>
+        <pit x="3" y="3" status="blank" onclick="hit(this)"></pit>
+      </game>
+      <h2 class="time">Time Left : <span id="theTime">10</span> seconds</h2>
+      <h1>Score : <span id="theScore">0</span></h1>
+      <audio id="bgm" preload="auto" loop="">
+        <source src="bgm.mp3" type="audio/ogg">
+      </audio>
+      <audio id="hit" preload="auto">
+        <source src="hit.wav" type="audio/ogg">
+      </audio>
+      <audio id="miss" preload="auto">
+        <source src="miss.mp3" type="audio/ogg">
+      </audio>
+      <audio id="birth" preload="auto">
+        <source src="birth.wav" type="audio/ogg">
+      </audio>
+    </div>
+    <div id="gameover">
+      <center>
+        <h1 class="timeleft">GameOver</h1>
+        <h1 class="yourscore">Score : <span id="endScore">0</span></h1>
+        <a href='#!' onclick='ready()'>Play Again</a>
+      </center>
+    </div>
   <script>
     pits = document.querySelectorAll('pit');
     preparing = 5;
-    birth = 1000;
-    delay = 3000;
+    birth = 800;
+    delay = 2400;
     function ready(){
+        document.getElementById("main").style.display = "block";
+        document.getElementById("gameover").style.display = "none";
         score = 0;
         time = 30;
         updateTime();
@@ -191,7 +235,19 @@
     function reloadMole(){
         if (time>0) {
             var randomPit = Math.floor(Math.random() * 16);
-            pits[randomPit].setAttribute("status","mole");
+            var monster = Math.floor((Math.random()*10)%4);
+            if (monster == 0) {
+              pits[randomPit].setAttribute("status","duck");
+            }
+            else if (monster == 1) {
+              pits[randomPit].setAttribute("status","lion");
+            }
+            else if (monster == 2) {
+              pits[randomPit].setAttribute("status","rat");
+            }
+            else {
+              pits[randomPit].setAttribute("status","bomb");
+            }
             sound('birth');
             setTimeout(
                 function(){
@@ -210,18 +266,34 @@
     function hit(pit){
         if (time>0) {
             var status = pit.getAttribute("status");
-            if (status == "mole") {
-                pit.setAttribute("status","die");
-                score++;
+            if (status == "duck" || status == "lion" || status == "rat") {
+                pit.setAttribute("status","collect");
+                if (status == "duck") {
+                  subTitle.innerText = "score + 3";
+                  score += 3;
+                }
+                else if (status == "lion") {
+                  subTitle.innerText = "score + 2";
+                  score += 2;
+                }
+                else {
+                  subTitle.innerText = "score + 1";
+                  score += 1;
+                }
                 sound('hit');
-                subTitle.innerText = "score + 1";
                 subTitle.style.color = "#00FF00";
             }
-            else if(status == "blank"){
+            else if(status == "blank" || status == "bomb"){
                 pit.setAttribute("status","miss");
-                score--;
+                if (status == "bomb") {
+                  score -= 2;
+                  subTitle.innerText = "score - 2";
+                }
+                else {
+                  score -= 1;
+                  subTitle.innerText = "score - 1";
+                }
                 sound('miss');
-                subTitle.innerText = "score - 1";
                 subTitle.style.color = "#FF0000";
             }
             updatScore();
@@ -233,8 +305,11 @@
     function updateTime(){
         theTime.innerText = time;
         if (time == 0) {
-            subTitle.innerHTML = "<a href='#!' onclick='ready()'>Play Again</a>";
-        }
+              document.getElementById("main").style.display = "none";
+              document.getElementById("gameover").style.display = "block";
+              endScore.innerText = score;
+            }
+
     }
 
     function sound(id){
