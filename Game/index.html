@@ -20,7 +20,7 @@
       #gameover {
         background: rgba(0, 0, 0, 0.5);
         background-size: cover;
-        margin: 15vh;
+        margin: 5vh;
         padding: 5%;
         border: 2px solid #86d9ff;
         border-radius: 10px;
@@ -32,7 +32,7 @@
         cursor: url(cursor.png),auto;
       }
       h1.headtitle {
-        margin-top: 1em;
+        margin-top: 1vh;
         font-size: 5vh;
         text-align: center;
         color: hsl(180,100%,50%);
@@ -194,7 +194,7 @@
         document.getElementById("main").style.display = "block";
         document.getElementById("gameover").style.display = "none";
         score = 0;
-        time = 30;
+        time = 10;
         updateTime();
         updatScore();
         for (var i = 0; i < pits.length; i++) {
