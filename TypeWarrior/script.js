@@ -123,43 +123,22 @@ function typing(e) {
 }
 
 function check() {
-    var lastdelay = 2;
     if (bossHp <= 0) {
-        clearInterval(cd);
         game.style.display = "none";
-        preload.style.display = "block";
-        ld = setInterval(function(){
-            if (lastdelay == 0) {
-                clearInterval(ld);
-                preload.style.display = "none";
-                gamewin.style.display = "block";
-                bossHp = 100;
-            }
-            else {
-                lastdelay -= 1;
-            }
-        }, 1000);
+        gamewin.style.display = "block";
+        clearInterval(cd);
+        bossHp = 100;
     }
     else if (myHp <= 0) {
-        clearInterval(cd);
         game.style.display = "none";
-        preload.style.display = "block";
-        ld = setInterval(function(){
-            if (lastdelay == 0) {
-                clearInterval(ld);
-                preload.style.display = "none";
-                gameover.style.display = "block";
-                myHp = 100;
-            }
-            else {
-                lastdelay -=1;
-            }
-        }, 1000);
+        gameover.style.display = "block";
+        clearInterval(cd);
+        myHp = 100;
     }
     requestAnimationFrame(check);
 }
 
-function countdown(){
+function countdown() {
     time = totaltime;
     cd = setInterval(
         function(){
@@ -174,7 +153,7 @@ function countdown(){
         ,1000);
 }
 
-function updateTime(){
+function updateTime() {
     theTime.innerText = time;
     if (time <= 0 && hit == 0) {
         myHp -= damage;
@@ -198,18 +177,18 @@ function delaystart() {
     var firstdelay = 2;
     level.style.display = "none";
     mainmenu.style.display = "none";
-    game.style.display = "block";
     gamebox.style.display = "none";
-    startdelay.style.display = "block";
     gamewin.style.display = "none";
     gameover.style.display = "none";
+    game.style.display = "block";
+    startdelay.style.display = "block";
     ds = setInterval(
         function(){
             if (firstdelay <= 0) {
                 clearInterval(ds);
                 startgame();
-                gamebox.style.display = "block";
                 startdelay.style.display = "none";
+                gamebox.style.display = "block";
                 startdelay.innerText = 3;
             }
             else{
@@ -228,11 +207,11 @@ function startgame() {
     updateTime();
 }
 
-function menugame(){
-    mainmenu.style.display = "block";
+function menugame() {
     game.style.display = "none";
     gamewin.style.display = "none";
     gameover.style.display = "none";
+    mainmenu.style.display = "block";
 }
 
 document.addEventListener("keydown", typing, false);
