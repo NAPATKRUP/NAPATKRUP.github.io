@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Concert+One');
 
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 body {
     background-image: url(./img/bg.jpg);
     background-size: cover;
@@ -274,12 +280,13 @@ a:hover {
     margin-top: -9vh;
 }
 
-.monster {
-    width: 22vmax;
-    height: 22vmax;
+#monster_start, #monster_die {
+    display: none;
+    width: 20vmax;
+    height: 20vmax;
     position: absolute;
-    left: calc(50% - 11vmax);
-    top: calc(50% - 11vmax);
+    left: calc(50% - 10vmax);
+    top: calc(50% - 10vmax);
 }
 
 .healthBar {
@@ -373,6 +380,7 @@ a:hover {
 .time {
     margin: auto;
     color: white;
+    font-size: 2vmax;
 }
 
 #theTime {
