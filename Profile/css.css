@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo|Itim');
 
+* {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
 body {
 	background-image: url("image/background.jpg");
 	text-align: center;

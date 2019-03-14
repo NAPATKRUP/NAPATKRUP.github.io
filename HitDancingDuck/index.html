@@ -6,6 +6,11 @@
     <title>HIT Dancing Duck | 61070045</title>
     <style type="text/css">
       @import url("https://fontlibrary.org/face/mr-pixel");
+      * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
       body {
         font-family: 'VTFMisterPixelRegular';
         font-weight: normal;
@@ -28,8 +33,11 @@
         display: none;
         background: rgba(0, 0, 0, 0.5);
         background-size: cover;
-        margin: 5vw;
-        padding: 5%;
+        position: fixed;
+        top: calc(50% - 40vh);
+        left: 20%;
+        width: 60%;
+        height: 80vh;
         border: 2px solid #86d9ff;
         border-radius: 10px;
         box-shadow: 0px 0px 20px #03A9F4;
@@ -38,8 +46,11 @@
         display: block;
         background: rgba(0, 0, 0, 0.5);
         background-size: cover;
-        margin: 5vw;
-        padding: 5%;
+        position: fixed;
+        top: calc(50% - 40vh);
+        left: 20%;
+        width: 60%;
+        height: 80vh;
         border: 2px solid #86d9ff;
         border-radius: 10px;
         box-shadow: 0px 0px 20px #03A9F4;
@@ -56,30 +67,43 @@
       }
       h1.headtitle {
         margin-top: 1em;
-        font-size: 7vh;
+        font-size: 3.5vmax;
         text-align: center;
         color: hsl(180,100%,50%);
         animation: glowing .7s infinite;
       }
       h1.yourscore {
-        font-size: 4vh;
+        font-size: 4vmax;
       }
       h1.timeleft {
-        font-size: 10vw;
+        margin-top: 10vmax;
+        font-size: 7vmax;
         color: hsl(360,100%,50%);
         animation: glowing .7s infinite;
       }
       h1.headpopup {
-        font-size: 3vw;
+        font-size: 4vmax;
         color: hsl(360,100%,50%);
         animation: glowing .7s infinite;
       }
       h1.open {
-        font-size: 8vw;
+        margin-top: 10vmax;
+        font-size: 7vmax;
         color: rgb(251, 255, 0);
         animation: glowing .7s infinite;
       }
-      h1, h2, h3 {
+      h1 {
+        font-size: 3.5vh;
+        text-align: center;
+        color: white;
+      }
+      h2 {
+        font-size: 3vh;
+        text-align: center;
+        color: white;
+      }
+      h3 {
+        font-size: 2vh;
         text-align: center;
         color: white;
       }
@@ -93,9 +117,9 @@
       }
       game {
         display: block;
-        margin: 1em auto;
-        width: 400px;
-        height: 400px;
+        margin: auto;
+        width: 28vmax;
+        height: 28vmax;
         background: rgba(0, 0, 0, 0.5);
         position: relative;
         overflow: hidden;
@@ -106,8 +130,8 @@
       }
       pit {
         display: block;
-        width: 100px;
-        height: 100px;
+        width: 7vmax;
+        height: 7vmax;
         position: absolute;
         left: 0px;
         top: 0px;
@@ -116,38 +140,42 @@
         background-repeat: no-repeat;
       }
       pit[y="1"]{
-          top:100px;
+          top:7vmax;
       }
       pit[y="2"]{
-          top:200px;
+          top:14vmax;
       }
       pit[y="3"]{
-          top:300px;
+          top:21vmax;
       }
       pit[x="1"]{
-          left:100px;
+          left:7vmax;
       }
       pit[x="2"]{
-          left:200px;
+          left:14vmax;
       }
       pit[x="3"]{
-          left:300px;
+          left:21vmax;
       }
       pit[status="duck"] {
         background: url('./image/duck.gif');
-        background-size: 100px 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
       pit[status="lion"] {
         background: url('./image/lion.gif');
-        background-size: 100px 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
       pit[status="rat"] {
         background: url('./image/rat.gif');
-        background-size: 100px 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
       pit[status="bomb"] {
         background: url('./image/bomb.gif');
-        background-size: 100px 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
       pit[status="collect"] {
         background: rgba(0, 250, 0, 0.5);
@@ -260,33 +288,6 @@
       </game>
       <h2 class="time">Time Left : <span id="theTime">10</span> seconds</h2>
       <h1>Score : <span id="theScore">0</span></h1>
-      <audio id="bgm">
-        <source src="./song/bg.mp3" type="audio/ogg">
-      </audio>
-      <audio id="hit">
-        <source src="./song/hit.mp3" type="audio/ogg">
-      </audio>
-      <audio id="miss">
-        <source src="./song/nope.mp3" type="audio/ogg">
-      </audio>
-      <audio id="quack">
-        <source src="./song/quack.mp3" type="audio/ogg">
-      </audio>
-      <audio id="lion">
-        <source src="./song/lion.wav" type="audio/ogg">
-      </audio>
-      <audio id="rat">
-        <source src="./song/rat.wav" type="audio/ogg">
-      </audio>
-      <audio id="bomb">
-        <source src="./song/bomb.wav" type="audio/ogg">
-      </audio>
-      <audio id="toom">
-        <source src="./song/toom.wav" type="audio/ogg">
-      </audio>
-      <audio id="lefttime">
-        <source src="./song/left.mp3" type="audio/ogg">
-      </audio>
     </div>
     <div id="gameover">
       <center>
@@ -296,22 +297,31 @@
       </center>
     </div>
   <script>
-    function sound(id){
-      document.getElementById(id).play();
-    }
+    var s_bg = new Audio("./sound/bg.mp3");
+    var s_hit = new Audio("./sound/hit.mp3");
+    var s_nope = new Audio("./sound/nope.mp3");
+    var s_quack = new Audio("./sound/quack.mp3");
+    var s_lion = new Audio("./sound/lion.wav");
+    var s_rat = new Audio("./sound/rat.wav");
+    var s_bomb = new Audio("./sound/bomb.wav");
+    var s_toom  = new Audio("./sound/toom.wav");
+    var s_left = new Audio("./sound/left.mp3");
+    var main = document.getElementById("main");
+    var gamestart = document.getElementById("gamestart");
+    var gameover = document.getElementById("gameover");
     pits = document.querySelectorAll('pit');
     preparing = 5;
-    birth = 2000;
-    delay = 3500;
+    birth = 1500;
+    delay = 3000;
     function startgame(){
-      document.getElementById("main").style.display = "block";
-      document.getElementById("gamestart").style.display = "none";
+      main.style.display = "block";
+      gamestart.style.display = "none";
       ready();
     }
     function ready(){
-        document.getElementById("main").style.display = "block";
-        document.getElementById("gameover").style.display = "none";
-        sound('bgm');
+        main.style.display = "block";
+        gameover.style.display = "none";
+        sound_bg();
         score = 0;
         time = 30;
         updateTime();
@@ -345,7 +355,6 @@
                 }
                 else{
                     clearInterval(cd);
-                    console.log("END");
                 }
             }
             ,1000)
@@ -356,19 +365,19 @@
             var monster = Math.floor(Math.random()*10)%4;
             if (monster == 0) {
               pits[randomPit].setAttribute("status","duck");
-              sound('quack');
+              sound_quack();
             }
             else if (monster == 1) {
               pits[randomPit].setAttribute("status","lion");
-              sound('lion');
+              sound_lion();
             }
             else if (monster == 2) {
               pits[randomPit].setAttribute("status","rat");
-              sound('rat');
+              sound_rat();
             }
             else {
               pits[randomPit].setAttribute("status","bomb");
-              sound('bomb');
+              sound_bomb();
             }
             setTimeout(
                 function(){
@@ -401,7 +410,7 @@
                   subTitle.innerText = "score + 1";
                   score += 1;
                 }
-                sound('hit');
+                sound_hit();
                 subTitle.style.color = "#00FF00";
             }
             else if(status == "blank" || status == "bomb"){
@@ -409,12 +418,12 @@
                 if (status == "bomb") {
                   score -= 2;
                   subTitle.innerText = "score - 2";
-                  sound('toom');
+                  sound_toom();
                 }
                 else {
                   score -= 1;
                   subTitle.innerText = "score - 1";
-                  sound('miss');
+                  sound_nope();
                 }
                 subTitle.style.color = "#FF0000";
             }
@@ -427,14 +436,59 @@
     function updateTime(){
         theTime.innerText = time;
         if (time == 0) {
-              sound('lefttime');
-              document.getElementById("main").style.display = "none";
-              document.getElementById("gameover").style.display = "block";
+              sound_left();
+              main.style.display = "none";
+              gameover.style.display = "block";
               endScore.innerText = score;
             }
-
     }
-
+    //Sound
+    function sound_bg() {
+      s_bg.pause();
+      s_bg.currentTime = 0;
+      s_bg.play();
+    }
+    function sound_hit() {
+      s_hit.pause();
+      s_hit.currentTime = 0;
+      s_hit.play();
+    }
+    function sound_nope() {
+      s_nope.pause();
+      s_nope.currentTime = 0;
+      s_nope.play();
+    }
+    function sound_quack() {
+      s_quack.pause();
+      s_quack.currentTime = 0;
+      s_quack.play();
+    }
+    function sound_lion() {
+      s_lion.pause();
+      s_lion.currentTime = 0;
+      s_lion.play();
+    }
+    function sound_rat() {
+      s_rat.pause();
+      s_rat.currentTime = 0;
+      s_rat.play();
+    }
+    function sound_bomb() {
+      s_bomb.pause();
+      s_bomb.currentTime = 0;
+      s_bomb.play();
+    }
+    function sound_toom() {
+      s_toom.pause();
+      s_toom.currentTime = 0;
+      s_toom.play();
+    }
+    function sound_left() {
+      s_left.pause();
+      s_left.currentTime = 0;
+      s_left.play();
+    }
+    //box
     const snows = [];
     for (let i = 0; i < 100; i++) {
       let snow = document.createElement("div");
