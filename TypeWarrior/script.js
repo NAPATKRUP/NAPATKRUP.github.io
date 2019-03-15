@@ -59,6 +59,9 @@ function setGame() {
     hit = 0;
     combo = 0;
     score = 0;
+    updatecombo.style.color = "white";
+    updatecombo.innerHTML = 0;
+    updatescore.innerHTML = 0;
     monster_start.src = "./img/Mons" + mymonster + ".gif";
     monster_die.src = "./img/Mons" + mymonster + "-die.gif";
     monster_start.style.display = "block";
