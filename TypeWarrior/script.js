@@ -173,7 +173,10 @@ function typing(e) {
         }
     }
     hue = Math.floor(combo/10)*30;
-    if (hue != 0) {
+    if (hue == 0) {
+        updatecombo.style.color = "white";
+    }
+    else {
         updatecombo.style.color = "hsl("+hue+", 100%, 50%)";
     }
     updatecombo.innerHTML = combo;
@@ -229,6 +232,7 @@ function updateTime() {
         myhealth.style.width = myHp + "%";
         combo = 0;
         updatecombo.innerHTML = combo;
+        updatecombo.style.color = "white";
         soundHurt();
         random();
         time = totaltime+1;
