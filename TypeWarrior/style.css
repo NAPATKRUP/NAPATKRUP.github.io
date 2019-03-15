@@ -238,7 +238,7 @@ a:hover {
     border: 10px solid #8fff86;
     border-radius: 50px;
     box-shadow: 0px 0px 100px #42f403;
-    font-size: 5vmax;
+    font-size: 4vmax;
 }
 
 .win {
@@ -258,7 +258,7 @@ a:hover {
     border: 10px solid #ff8686;
     border-radius: 50px;
     box-shadow: 0px 0px 100px #f40303;
-    font-size: 5vmax;
+    font-size: 4vmax;
 }
 
 .lose {
