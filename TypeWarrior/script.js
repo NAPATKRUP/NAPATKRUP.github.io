@@ -59,6 +59,7 @@ function setGame() {
     hit = 0;
     combo = 0;
     score = 0;
+    gameend = false;
     updatecombo.style.color = "white";
     updatecombo.innerHTML = 0;
     updatescore.innerHTML = 0;
@@ -117,6 +118,9 @@ function random() {
 function typing(e) {
     typed = String.fromCharCode(e.which);
     soundPress();
+    if (gameend) {
+        return;
+    }
     for (var i = 0; i < spans.length; i++) {
         if (spans[i].innerHTML === typed) { // if typed letter is the one from the word
             if (spans[i].classList.contains("bg")) { // if it already has class with the bacground color then check the next one
@@ -190,6 +194,7 @@ function check() {
         myword.style.display = "none";
         timestatus.style.display = "none";
         monster_die.style.display = "block";
+        gameend = true;
         clearInterval(cd);
         setTimeout(function() {
             soundWin();
@@ -202,6 +207,7 @@ function check() {
         soundGameover();
         game.style.display = "none";
         gameover.style.display = "block";
+        gameend = true;
         clearInterval(cd);
         myHp = 100;
     }
@@ -314,6 +320,9 @@ function soundCountdown() {
 }
 
 function soundPress() {
+    if (gameend) {
+        return;
+    }
     s_press.pause();
     s_press.currentTime = 0;
     s_press.play();
