@@ -176,7 +176,8 @@ a:hover {
 }
 
 .popup {
-    font-size: 1.5vmax;
+    text-align: left;
+    font-size: 1.25vmax;
     margin: 7% auto;
     padding: 20px;
     background: #fff;
@@ -191,6 +192,7 @@ a:hover {
 }
 
 .popup h1 {
+    text-align: center;
     color: #333;
 }
 
