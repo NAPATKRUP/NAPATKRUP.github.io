@@ -14,6 +14,7 @@ var gamebox = document.getElementById("gamebox");
 var monster_start = document.getElementById("monster_start");
 var monster_die = document.getElementById("monster_die");
 var myword = document.getElementById("myword");
+var mytranslate = document.getElementById("mytranslate");
 var timestatus = document.getElementById("timestatus");
 var updatecombo = document.getElementById("updatecombo");
 var updatescore = document.getElementById("updatescore");
@@ -109,6 +110,7 @@ function random() {
         words.appendChild(span);
     }
     spans = document.querySelectorAll(".span");
+    mytranslate.innerHTML = thailist[random];
     totaltime = timemode*Math.floor(wordArray.length/3);
     if(totaltime == 0) {
         totaltime = timemode;
