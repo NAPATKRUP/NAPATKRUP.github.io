@@ -1,6 +1,4 @@
 var spans, bossHp, myHp, time, mode, timemode, totaltime, damage, hit, correct, combo, score;
-var load = document.getElementById("load");
-var main = document.getElementById("main");
 var words = document.querySelector(".words");
 var health = document.querySelector(".health");
 var myhealth = document.querySelector(".myhealth");
@@ -293,17 +291,6 @@ function delayStart() {
             }
         }
         ,1000);
-}
-
-//Loading Page
-var myTime;
-function myFunction() {
-    myTime = setTimeout(showPage, 500);
-}
-function showPage() {
-    load.style.display = "none";
-    main.style.display = "block";
-    document.body.style.backgroundImage = "url(./img/bg.jpg)";
 }
 
 //StartGame
