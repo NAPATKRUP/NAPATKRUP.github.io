@@ -37,7 +37,7 @@ a:hover {
 
 #main {
     display: none;
-    animation: fadein 1.5s;
+    animation: fadein 0.5s;
 }
 
 @keyframes fadein {
