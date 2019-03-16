@@ -26,6 +26,7 @@ var s_hurt = new Audio("./sound/5.hurt.wav");
 var s_die = new Audio("./sound/6.die.wav");
 var s_win = new Audio("./sound/7.win.mp3");
 var s_gameover = new Audio("./sound/8.gameover.wav");
+var s_miss = new Audio("./sound/9.missed.wav");
 
 //Change mode
 function rightChange() {
@@ -117,7 +118,6 @@ function random() {
 //My typing
 function typing(e) {
     typed = String.fromCharCode(e.which);
-    soundPress();
     if (gameend) {
         return;
     }
@@ -127,6 +127,7 @@ function typing(e) {
                 continue;
             } else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) { // if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
                 spans[i].classList.add("bg");
+                soundPress();
                 game.style.borderColor = "#8fff86";
                 game.style.boxShadow = "0px 0px 40px #42f403";
                 combo += 1;
@@ -143,6 +144,7 @@ function typing(e) {
             if (spans[i].classList.contains("bg")) { // if it already has class with the bacground color then check the next one
                 continue;
             } else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) { // if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
+                soundMiss();
                 game.style.borderColor = "#ff8686";
                 game.style.boxShadow = "0px 0px 40px #f40303";
                 combo = 0;
@@ -356,6 +358,12 @@ function soundGameover() {
     s_gameover.pause();
     s_gameover.currentTime = 0;
     s_gameover.play();
+}
+
+function soundMiss() {
+    s_miss.pause();
+    s_miss.currentTime = 0;
+    s_miss.play();
 }
 
 document.addEventListener("keydown", typing, false);
