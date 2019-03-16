@@ -293,6 +293,16 @@ function delayStart() {
         ,1000);
 }
 
+//Loading Page
+var myTime;
+function myFunction() {
+    myTime = setTimeout(showPage, 500);
+}
+function showPage() {
+    document.getElementById("load").style.display = "none";
+    document.getElementById("main").style.display = "block";
+}
+
 //StartGame
 function startGame() {
     scoreboard.style.display = "block";
