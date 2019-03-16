@@ -67,10 +67,11 @@ function setGame() {
     updatescore.innerHTML = 0;
     monster_start.src = "./img/Mons" + mymonster + ".gif";
     monster_die.src = "./img/Mons" + mymonster + "-die.gif";
+    monster_die.style.display = "none";
     monster_start.style.display = "block";
     myword.style.display = "block";
     timestatus.style.display = "block";
-    monster_die.style.display = "none";
+    mytranslate.style.display = "block";
 }
 
 //Set Mode Game
@@ -203,6 +204,7 @@ function check() {
         setTimeout(function() {
             soundWin();
             game.style.display = "none";
+            mytranslate.style.display = "none";
             gamewin.style.display = "block";
         }, 4000);
         bossHp = 100;
@@ -210,6 +212,7 @@ function check() {
     else if (myHp <= 0) {
         soundGameover();
         game.style.display = "none";
+        mytranslate.style.display = "none";
         gameover.style.display = "block";
         gameend = true;
         clearInterval(cd);
