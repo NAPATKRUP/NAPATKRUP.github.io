@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url(./img/bg.jpg);
+    background: #000000;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -37,6 +37,12 @@ a:hover {
 
 #main {
     display: none;
+    animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 #load{
