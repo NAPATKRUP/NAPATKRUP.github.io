@@ -36,11 +36,14 @@ a:hover {
 }
 
 #loadingstart {
-    font-size: 2vmax;
+    position: absolute;
+    font-size: 4vmin;
     text-align: center;
     color: white;
     text-shadow: 0px 0px 20px #03A9F4;
-    margin-top: 35vmax;
+    left: 0;
+    right: 0;
+    bottom: 5vmin;
     opacity: 0.7;
 }
 
@@ -49,8 +52,8 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10vmax;
-    height: 10vmax;
+    width: 25vmin;
+    height: 25vmin;
 }
 
 #load hr{
