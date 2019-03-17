@@ -62,9 +62,9 @@ a:hover {
     font-size: 6vmin;
     color: white;
     background: black;
-    border: 0px solid white;
+    border: 0px solid black;
     text-shadow: 0px 0px 20px #03A9F4;
-    box-shadow: 0px 0px 0px white;
+    box-shadow: 0px 0px 0px black;
 }
 
 #presshere a:hover {
