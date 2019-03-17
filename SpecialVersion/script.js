@@ -2,11 +2,11 @@ var spans = 0, bossHp, myHp, time, mode, timemode, totaltime, damage, hit, corre
 var words = document.querySelector(".words");
 var health = document.querySelector(".health");
 var myhealth = document.querySelector(".myhealth");
+var loadingstart = document.getElementById("loadingstart");
+var load = document.getElementById("load");
 var mainmenu = document.getElementById("mainmenu");
 var preload = document.getElementById("preload");
 var level = document.getElementById("level");
-var load = document.getElementById("load");
-var main = document.getElementById("main");
 var statusmode = document.getElementById("statusmode");
 var startdelay = document.getElementById("startdelay");
 var game = document.getElementById("game");
@@ -198,6 +198,7 @@ function typing(e) {
 //Check Hp
 function check() {
     if (bossHp <= 0) {
+        s_coupe.pause();
         soundDie();
         monster_start.style.display = "none";
         myword.style.display = "none";
@@ -214,6 +215,7 @@ function check() {
         bossHp = 100;
     }
     else if (myHp <= 0) {
+        s_coupe.pause();
         soundGameover();
         game.style.display = "none";
         mytranslate.style.display = "none";
@@ -267,6 +269,7 @@ function levelSelect() {
     scoreboard.style.display = "none";
     level.style.display = "block";
     soundClick();
+    soundCoupe();
 }
 
 //Delay before start
@@ -310,6 +313,7 @@ function startGame() {
 //Set to Menu
 function menuGame() {
     soundClick();
+    soundMusic();
     game.style.display = "none";
     gamewin.style.display = "none";
     gameover.style.display = "none";
@@ -376,25 +380,27 @@ function soundMiss() {
 }
 
 function soundMusic() {
-    s_music.pause();
     s_music.currentTime = 0;
     s_music.play();
+    s_music.loop = true;
 }
 
 function soundCoupe() {
-    s_coupe.pause();
+    s_music.pause();
     s_coupe.currentTime = 0;
     s_coupe.play();
 }
 
 //Loading Page
 function myFunction() {
-    myTime = setTimeout(showPage, 1000);
+    myTime = setTimeout(showPage, 1500);
 }
 
 function showPage() {
     load.style.display = "none";
-    main.style.display = "block";
+    loadingstart.style.display = "none";
+    mainmenu.style.display = "block";
+    document.body.style.backgroundImage = "url('./img/bg.jpg')";
     soundMusic();
 }
 
