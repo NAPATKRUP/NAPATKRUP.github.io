@@ -1,10 +1,12 @@
-var spans, bossHp, myHp, time, mode, timemode, totaltime, damage, hit, correct, combo, score;
+var spans = 0, bossHp, myHp, time, mode, timemode, totaltime, damage, hit, correct, combo, score, myTime, gameend;
 var words = document.querySelector(".words");
 var health = document.querySelector(".health");
 var myhealth = document.querySelector(".myhealth");
 var mainmenu = document.getElementById("mainmenu");
 var preload = document.getElementById("preload");
 var level = document.getElementById("level");
+var load = document.getElementById("load");
+var main = document.getElementById("main");
 var statusmode = document.getElementById("statusmode");
 var startdelay = document.getElementById("startdelay");
 var game = document.getElementById("game");
@@ -373,15 +375,27 @@ function soundMiss() {
     s_miss.play();
 }
 
+function soundMusic() {
+    s_music.pause();
+    s_music.currentTime = 0;
+    s_music.play();
+}
+
+function soundCoupe() {
+    s_coupe.pause();
+    s_coupe.currentTime = 0;
+    s_coupe.play();
+}
+
 //Loading Page
-var myTime;
 function myFunction() {
-    myTime = setTimeout(showPage, 500);
+    myTime = setTimeout(showPage, 1000);
 }
 
 function showPage() {
-    document.getElementById("load").style.display = "none";
-    document.getElementById("main").style.display = "flex";
+    load.style.display = "none";
+    main.style.display = "block";
+    soundMusic();
 }
 
 document.addEventListener("keydown", typing, false);

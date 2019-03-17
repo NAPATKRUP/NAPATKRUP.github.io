@@ -35,7 +35,21 @@ a:hover {
     color: black;
 }
 
-#main, #preload {
+#main {
+    display: none;
+    animation: fadein 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#preload {
     display: none;
 }
 
