@@ -373,9 +373,15 @@ function soundMiss() {
     s_miss.play();
 }
 
-//สั่งให้โหลดไฟล์ทั้งหมดก่อน โหลดเสร็จเกมค่อยเริ่ม
-window.onload = function(){
-    setTimeout(function(){playbgm()},500);
+//Loading Page
+var myTime;
+function myFunction() {
+    myTime = setTimeout(showPage, 500);
+}
+
+function showPage() {
+    document.getElementById("load").style.display = "none";
+    document.getElementById("main").style.display = "flex";
 }
 
 document.addEventListener("keydown", typing, false);
