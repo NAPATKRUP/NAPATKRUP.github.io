@@ -37,7 +37,7 @@ body {
 }
 
 #page1 {
-    background-image: url("./image/bg.png");
+    background-image: url("./bg.png");
     background-position: center;
     background-size: cover;
 }
@@ -108,7 +108,7 @@ td:nth-child(odd) {
     left: 10%;
     background: black;
     color: white;
-    width: 40%;
+    width: 50%;
     font-size: 18px;
     border-bottom: 10px solid #204a79;
 }
@@ -124,41 +124,9 @@ td:nth-child(odd) {
     border-bottom: 10px solid #204a79;
 }
 
-.titleboxnews {
-    position: relative;
-    top: -66.5vh;
-    left: 10%;
-    background: black;
-    color: white;
-    width: 35%;
-    font-size: 18px;
-    border-bottom: 10px solid #204a79;
-}
-
-.contentboxnews {
-    position: relative;
-    top: -65vh;
-    left: 8%;
-    background: white;
-    padding: 3%;
-    width: 35%;
-    font-size: 25px;
-}
-
-.titleboxvideo {
-    position: relative;
-    top: 10vh;
-    left: 50%;
-    background: black;
-    color: white;
-    width: 40%;
-    font-size: 18px;
-    border-bottom: 10px solid #204a79;
-}
-
 .contentboxleft {
     position: relative;
-    top: -35vh;
+    top: -10vh;
     left: 10%;
     background: white;
     padding: 3%;
@@ -168,46 +136,12 @@ td:nth-child(odd) {
 
 .contentboxright {
     position: relative;
-    top: -35vh;
-    left: 50%;
-    background: white;
-    padding: 3%;
-    width: 40%;
-    font-size: 25px;
-}
-
-.contentboxstack {
-    position: relative;
-    top: -10vh;
-    left: 10%;
-    background: white;
-    padding: 3%;
-    width: 40%;
-    font-size: 25px;
-}
-
-.contentboxabout {
-    position: relative;
     top: -10vh;
     left: 50%;
     background: white;
     padding: 3%;
     width: 40%;
     font-size: 25px;
-}
-
-.imgleft {
-    position: relative;
-    left: 10%;
-    top: 20vh;
-    width: 40%;
-}
-
-.imgright {
-    position: relative;
-    left: 50%;
-    top: 20vh;
-    width: 40%;
 }
 
 .mybox {
@@ -239,29 +173,6 @@ td:nth-child(odd) {
 
 .source {
     font-size: 15px;
-}
-
-.button {
-    padding: 20px 40px;
-    border-color: #f3f3f3;
-    font-size: 17px;
-    font-size: 1.7rem;
-    font-weight: 500;
-    margin-top: 40px;
-    display: block;
-    position: relative;
-    width: 40%;
-    left: 50%;
-}
-.button {
-    border: 5px solid #204a79;
-    color: #204a79;
-    background: rgba(0,0,0,0.7);
-    text-transform: uppercase;
-    transition: all 0.15s ease-in-out;
-}
-.button:hover {
-    background-color: rgba(255,255,255,0.7);
 }
 
 .nav {
@@ -364,21 +275,7 @@ td:nth-child(odd) {
         display: block;
         position: relative;
         left: 10%;
-        top: 15vh;
-        width: 80%;
-    }
-    .contentboxabout, .contentboxstack {
-        display: block;
-        position: relative;
-        left: 10%;
-        top: 15vh;
-        width: 80%;
-    }
-    .imgleft, .imgright {
-        display: block;
-        position: relative;
-        left: 10%;
-        top: 15vh;
+        top: 10vh;
         width: 80%;
     }
 }
