@@ -360,20 +360,25 @@ ul li {
     a {
         font-size: 12px;
     }
+
     .title_1 {
         margin-top: -5vmax;
     }
+
     .title_1 h1 {
         padding-left: 1vmax;
         font-size: 55px;
     }
+
     .mybox, .myabout {
         top: 10vh;
         height: 70%;
     }
+
     .myabout p, .mybox p {
         font-size: 4vmin;
     }
+
     .titleboxleft, .titleboxright, .titleboxnews, .titleboxvideo {
         display: block;
         position: relative;
@@ -381,6 +386,7 @@ ul li {
         top: 10vh;
         width: 80%;
     }
+
     .contentboxleft, .contentboxright, .contentboxnews, .contentboxstack {
         display: block;
         position: relative;
@@ -388,9 +394,11 @@ ul li {
         top: 15vh;
         width: 80%;
     }
+
     .contentboxnews {
         top: 10vh;
     }
+
     .imgleft, .imgright {
         display: block;
         position: relative;
@@ -398,18 +406,22 @@ ul li {
         top: 15vh;
         width: 80%;
     }
+
     .videoshow a {
         width: 80%;
         left: 10%;
         top: -25vmin;
     }
+
     .button_lang {
         padding: 2px 2px;
     }
+
     ul li {
         display: block;
         margin: 10px;
     }
+
     .nav > .nav-links > a {
         display: inline-block;
         padding: 20px 60px 1px 70px;
@@ -418,24 +430,28 @@ ul li {
         color: white;
         font-size: 2.5vmax;
     }
+
     .nav > .nav-btn {
         display: inline-block;
         position: absolute;
         right: 0px;
         top: 0px;
     }
+
     .nav > .nav-btn > label {
         display: inline-block;
         width: 50px;
         height: 50px;
         padding-top: 25px;
     }
+
     .nav > .nav-btn > label > span {
         display: block;
         width: 3vmax;
         height: 1.5vmax;
         border-top: 0.5vmax solid #eee;
     }
+
     .nav > .nav-links {
         position: absolute;
         display: block;
@@ -445,14 +461,18 @@ ul li {
         overflow-y: hidden;
         top: 70px;
     }
+
     .nav > .nav-links > a {
         display: block;
         width: 100%;
     }
+
     .nav > #nav-check:not(:checked) ~ .nav-links {
         height: 0px;
     }
+
     .nav > #nav-check:checked ~ .nav-links {
         height: 300px;
     }
+
 }
