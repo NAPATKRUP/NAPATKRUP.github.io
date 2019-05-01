@@ -10,7 +10,7 @@ body {
 }
 
 a {
-    font-size: 20px;
+    font-size: 2.75vmin;
 }
 
 .scrollbar {
@@ -20,6 +20,7 @@ a {
     width: 100%;
     background: white;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .force-overflow {
@@ -95,8 +96,9 @@ td:nth-child(odd) {
 }
 
 .title_1 {
-    margin-top: -1vmax;
+    margin-top: -2vmax;
     margin-left: 1vmax;
+    margin-bottom: 5vmax;
     width: 95%;
     height: 85vh;
 }
@@ -398,12 +400,19 @@ ul li {
     .nav > #nav-check:checked ~ .nav-links {
         height: 300px;
     }
-
+    .title_1 {
+        margin-top: -5vmax;
+    }
     .title_1 h1 {
         padding-left: 1vmax;
+        font-size: 55px;
     }
-    .mybox {
-        height: 60%;
+    .mybox, .myabout {
+        top: 10vh;
+        height: 70%;
+    }
+    .myabout p, .mybox p {
+        font-size: 4vmin;
     }
     .titleboxleft, .titleboxright, .titleboxnews, .titleboxvideo {
         display: block;
@@ -432,7 +441,7 @@ ul li {
     .videoshow a {
         width: 80%;
         left: 10%;
-        top: -10vh;
+        top: -25vmin;
     }
     .button_lang {
         padding: 2px 2px;
