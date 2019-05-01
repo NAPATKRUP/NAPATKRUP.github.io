@@ -356,7 +356,7 @@ ul li {
     display: none;
 }
 
-@media (max-width:960px) {
+@media (max-width:1100px) {
     a {
         font-size: 12px;
     }
@@ -472,7 +472,7 @@ ul li {
     }
 
     .nav > #nav-check:checked ~ .nav-links {
-        height: 300px;
+        height: 400px;
     }
 
 }
