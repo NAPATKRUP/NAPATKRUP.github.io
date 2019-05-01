@@ -17,31 +17,53 @@
             <span></span>
           </label>
         </div>
-        <div class="nav-links">
+        <div class="nav-links" id="th">
           <a href="#page1">หน้าหลัก</a>
           <a href="#page2">เกี่ยวกับ</a>
           <a href="#page3">ปฏิญญาสากล</a>
           <a href="#page4">สถิติ</a>
           <a href="#page5">ความรุนแรง</a>
         </div>
+        <div class="nav-links" id="en">
+          <a href="#page1">Home</a>
+          <a href="#page2">About</a>
+          <a href="#page3">Human Rights</a>
+          <a href="#page4">Statistics</a>
+          <a href="#page5">Violence</a>
+        </div>
     </div>
+    <ul class="social">
+      <li id="th_click" class="button_lang current_lang">TH</li>
+      <li id="en_click" class="button_lang" onclick="changetoeng()">EN</li>
+    </ul>
     <div id="content">
         <div class="section" id="page1">
-            <div class="title_1">
+            <div class="title_1" id="th">
               <br><br><br><br><br>
               <h1>การใช้</h1>
               <h1>ความรุนแรง</h1>
               <h1>กับเด็ก</h1>
             </div>
+            <div class="title_1" id="en">
+              <br><br><br><br><br>
+              <h1>Physical</h1>
+              <h1>Child</h1>
+              <h1>Abuse</h1>
+            </div>
         </div>
         <div class="section" id="page2">
           <div class="scrollbar" id="style-3">
             <div class="force-overflow">
-              <div class="titleboxleft">
-                  <h1>เกี่ยวกับ</h1>
-              </div>
-              <div class="contentboxabout">
-                <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;เว็บนี้จัดทำขึ้นมาเพื่อสร้างความตื่นตัวในเรื่องสิทธิมนุษยชนที่มนุษย์ทุกคนพึงมี โดยเนื้อหาในเว็บ จะมุ่งเน้นไปที่การใช้ความรุนแรงกับเด็ก ผ่านการลงโทษและสั่งสอนด้วยความรุนแรงทางกาย ซึ่งเป็นความเชื่อที่ผิดที่เกิดขึ้นในสังคมจากอดีตมาถึงปัจจุบัน นอกจากนี้ในเว็บยังประกอบไปด้วยวิธีการส่งเสริมการเลี้ยงลูกเชิงบวก ที่ไม่จำเป็นต้องใช้ความรุนแรงในการเลี้ยงดูลูก</p>
+              <div class="myabout">
+                <mark><h1 id="th">เกี่ยวกับ</h1></mark>
+                <mark><h1 id="en">About</h1></mark>
+                <p class="source" id="th">&nbsp;&nbsp;&nbsp;&nbsp;เว็บนี้จัดทำขึ้นมาเพื่อสร้างความตื่นตัวในเรื่องสิทธิมนุษยชนที่มนุษย์ทุกคนพึงมี
+                   โดยเนื้อหาในเว็บจะมุ่งเน้นไปที่การใช้ความรุนแรงกับเด็กผ่านการลงโทษและสั่งสอนด้วยความรุนแรงทางกาย
+                    ซึ่งเป็นความเชื่อที่ผิดที่เกิดขึ้นในสังคมจากอดีตมาถึงปัจจุบัน นอกจากนี้ในเว็บยังประกอบไปด้วยวิธีการส่งเสริมการเลี้ยงลูกเชิงบวกที่ไม่จำเป็นต้องใช้ความรุนแรงในการเลี้ยงดูลูก</p>
+                <p class="source" id="en">&nbsp;&nbsp;&nbsp;&nbsp;This website was created for human rights awareness. The 
+                    contents in this website will focus on violence against children by physical violence, which is the false 
+                    belief in society from the past to the present. Furthermore, these website contents also include guides on 
+                    how to positively raising your children with discipline without the violence.</p>
               </div>
             </div>
           </div>
@@ -50,9 +72,13 @@
           <div class="scrollbar" id="style-3">
             <div class="force-overflow">
               <div class="mybox">
-                <mark><h1>ปฏิญญาสากลว่าด้วยสิทธิมนุษยชน</h1></mark>
-                <p><b>ข้อ 5</b> ไม่ถูกทรมาน</p>
-                <p class="source">บุคคลใดจะถูกกระทำการทรมาน หรือการปฏิบัติ หรือการลงโทษที่โหดร้ายไร้มนุษยธรรม หรือย่ำยีศักดิ์ศรีไม่ได้</p>
+                <mark><h1 id="th">ปฏิญญาสากลว่าด้วยสิทธิมนุษยชน</h1></mark>
+                <mark><h1 id="en">Universal Declaration of Human Rights</h1></mark>
+                <p id="th"><b>ข้อ 5</b> ไม่ถูกทรมาน</p>
+                <p id="en"><b>Article 5</b> No Torture</p>
+                <p class="source" id="th">บุคคลใดจะถูกกระทำการทรมาน หรือการปฏิบัติ หรือการลงโทษที่โหดร้ายไร้มนุษยธรรม หรือย่ำยีศักดิ์ศรีไม่ได้</p>
+                <p class="source" id="en">No one shall be subjected to torture or to cruel, inhuman or degrading treatment or 
+                  punishment.</p>
               </div>
             </div>
           </div>
@@ -62,13 +88,42 @@
             <div class="force-overflow">
               <div id="smallsection">
                 <div class="titleboxright">
-                    <h1>สถิติการใช้ความรุนแรงทางกายกับเด็ก</h1>
+                    <h1 id="th">สถิติการใช้ความรุนแรงทางกายกับเด็ก</h1>
+                    <h1 id="en">Statistic of physical child abuse</h1>
                 </div>
-                <div class="contentboxstack">
+                <div class="contentboxstack" id="th">
                   <table>
                     <tr>
                       <th>ปี</th>
                       <th>สถิติ</th>
+                    </tr>
+                    <tr>
+                      <td>2554</td>
+                      <td>2413</td>
+                    </tr>
+                    <tr>
+                      <td>2555</td>
+                      <td>2048</td>
+                    </tr>
+                    <tr>
+                      <td>2556</td>
+                      <td>3956</td>
+                    </tr>
+                    <tr>
+                      <td>2557</td>
+                      <td>1275</td>
+                    </tr>
+                    <tr>
+                      <td>2558</td>
+                      <td>2470</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="contentboxstack" id="en">
+                  <table>
+                    <tr>
+                      <th>Year</th>
+                      <th>Statistic</th>
                     </tr>
                     <tr>
                       <td>2554</td>
@@ -101,23 +156,58 @@
             <div class="force-overflow">
               <div id="smallsection">
                 <div class="titleboxleft">
-                    <h1>ความรุนแรง</h1>
+                    <h1 id="th">ความรุนแรง</h1>
+                    <h1 id="en">Violence</h1>
                 </div>
                 <img src="./image/pic1.png" class="imgleft"/>
-                <div class="contentboxright">
-                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;คือ การกระทำใดๆ ต่อร่างกาย หรือจิตใจ เป็นเหตุให้เกิดอันตรายต่อร่างกาย จิตใจและพัฒนาการ การทอดทิ้ง
-                      หรือการปล่อยปละละเลย การแสวงประโยชน์ การล่วงเกินทางเพศ การใช้เด็กให้กระทำ หรือประพฤติในลักษณะที่น่าจะเป็นอันตรายแก่ร่างกายจิตใจและพัฒนาการ หรือขัด ต่อกฎหมายศีลธรรมอันดีรวมถึงการกระทำโดยมิชอบ ทั้งนี้ไม่ว่าเด็กจะยินยอมหรือไม่ก็ตาม</p>
+                <div class="contentboxright" id="th">
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;คือ การกระทำใดๆ ต่อร่างกาย หรือจิตใจ 
+                    เป็นเหตุให้เกิดอันตรายต่อร่างกายจิตใจและพัฒนาการ การทอดทิ้ง หรือการปล่อยปละละเลย การแสวงประโยชน์ 
+                    การล่วงเกินทางเพศ การใช้เด็กให้กระทำ หรือประพฤติในลักษณะที่น่าจะเป็นอันตรายแก่ร่างกายจิตใจและพัฒนาการ 
+                    หรือขัด ต่อกฎหมายศีลธรรมอันดีรวมถึงการกระทำโดยมิชอบ ทั้งนี้ไม่ว่าเด็กจะยินยอมหรือไม่ก็ตาม</p>
                   <hr>
-                  <p class="source">ที่มา : คู่มือการปฏิบัติและข้อตกลงร่วมกัน: การคุ้มครองและช่วยเหลือเด็กในภาวะเสี่ยงและเป็นเหยื่อจากการละเมิด ละเลยทอดทิ้ง แสวงหาผลประโยชน์และความรุนแรง, พ.ศ. 2553</p>
+                  <p class="source">ที่มา : คู่มือการปฏิบัติและข้อตกลงร่วมกัน: 
+                    การคุ้มครองและช่วยเหลือเด็กในภาวะเสี่ยงและเป็นเหยื่อจากการละเมิดละเลยทอดทิ้งแสวงหาผลประโยชน์และความรุนแรง, พ.ศ. 2553</p>
                 </div>
+                <div class="contentboxright" id="en">
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;Violence is an act of physical force that causes or is 
+                    intended to cause harm. The damage inflicted by violence may be physical, psychological, or both. 
+                     Violence to children may include negligence, exploitation, sexual harassment, child abuse or act 
+                     that may cause physical, psychological, or both harm to children development, including disregarding 
+                     laws or moral with or without children consent.</p>
+                  </div>
               </div>
               <div id="smallsection">
                 <div class="titleboxright">
-                    <h1>ความรุนแรงทางร่างกาย</h1>
+                    <h1 id="th">ความรุนแรงทางร่างกาย</h1>
+                    <h1 id="en">Physical Abuse</h1>
                 </div>
                 <img src="./image/pic2.png" class="imgright"/>
-                <div class="contentboxleft">
-                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;หมายถึง การทำให้เกิดอันตราย หรือทำให้เสี่ยงที่จะเกิดอันตราย ต่อร่างกายของเด็กจากการกระทำหรือละเลย ที่จะกระทำ ทั้งที่อยู่ในวิสัยที่สามารถกระทำได้ของบิดามารดา หรือผู้ดูแลที่อยู่ในฐานะรับผิดชอบเด็ก หรือผู้มีอำนาจเหนือเด็ก หรือเป็นผู้ที่เด็กไว้ใจ อาจเกิดขึ้นครั้งเดียวหรือเกิดขึ้นซ้ำๆ (โดยการกระทำดังกล่าว อาจเกิดจากการใช้ความรุนแรง หรือการพยายามให้เกิดความเจ็บปวด บาดเจ็บ หรือเป็นอันตราย โดยบุคคลที่กระทำอยู่ในสถานะที่มีกำลังเหนือกว่า หรือมีอำนาจในการต่อรอง ซึ่งครอบคลุมถึงการลงโทษด้วยความรุนแรงด้วย)</p>
+                <div class="contentboxleft" id="th">
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;หมายถึง การทำให้เกิดอันตราย หรือทำให้เสี่ยงที่จะเกิดอันตราย ต่อร่างกายของเด็กจากการกระทำหรือละเลย 
+                    ที่จะกระทำ ทั้งที่อยู่ในวิสัยที่สามารถกระทำได้ของบิดามารดา หรือผู้ดูแลที่อยู่ในฐานะรับผิดชอบเด็ก หรือผู้มีอำนาจเหนือเด็ก หรือเป็นผู้ที่เด็กไว้ใจ 
+                    อาจเกิดขึ้นครั้งเดียวหรือเกิดขึ้นซ้ำๆ (โดยการกระทำดังกล่าว อาจเกิดจากการใช้ความรุนแรง หรือ การพยายามให้เกิดความเจ็บปวด บาดเจ็บ หรือเป็นอันตราย 
+                    โดยบุคคลที่กระทำอยู่ในสถานะที่มีกำลังเหนือกว่า หรือมีอำนาจในการต่อรอง ซึ่งครอบคลุมถึงการลงโทษด้วยความรุนแรงด้วย)</p>
+                  <p class="mycontent"><b>ตัวอย่างของความรุนแรงทางร่างกายต่อเด็ก</b></p>
+                  <p class="mycontent">1. ชกต่อยหรือเตะ</p>
+                  <p class="mycontent">2. จับตัวเขย่าหรือโยน</p>
+                  <p class="mycontent">3. ตีด้วยวัสดุหรือสิ่งของ เช่น ไม้เรียว หรือเข็มขัด</p>
+                  <p class="mycontent">4. ใช้ไฟจี้หรือใช้น้ำร้อนลวก</p>
+                  <p class="mycontent">5. จับกดน้ำ บีบรัดคอหรืออุดปากจมูกทำให้หายใจไม่ออก หรือบังคับให้กินหรือดื่มสิ่งที่เป็นพิษหรือเป็นอันตราย</p>
+                </div>
+                <div class="contentboxleft" id="en">
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;Child physical abuse is the act that will cause physical harm, 
+                    or risk to cause physical harm to child by act or negligence, which could cause by the parent, guardians 
+                    or person with that child trust. The act may occur once or repeatedly. (The said act might be a physical 
+                    harm or the intent to hurt, harm or put a child in danger. By the person in control which includes the 
+                    violent punishment too).</p>
+                  <p class="mycontent"><b>Example of physical abuse to children</b></p>
+                  <p class="mycontent">1. Hitting and beating a child</p>
+                  <p class="mycontent">2. Hitting a child with an object, such as a belt or a stick</p>
+                  <p class="mycontent">3. Burning a child with hot water, a cigarette, or an iron</p>
+                  <p class="mycontent">4. Holding a child underwater</p>
+                  <p class="mycontent">5. Tying up a child</p>
+                  <p class="mycontent">6. Severely shaking a baby</p>
                 </div>
               </div>
               <div id="smallsection">
@@ -126,7 +216,11 @@
                 </div>
                 <img src="./image/pic3.png" class="imgleft"/>
                 <div class="contentboxright">
-                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;การอบรมสั่งสอนลูกโดยการลงโทษ ถือเป็นการฝึกระเบียบวินัยให้ได้ผลดีก็จริง แต่ก็ไม่จำเป็นต้องใช้วิธีบังคับลงโทษให้เจ็บตัว หรือดุว่าให้เจ็บใจเสมอไป เพราะวิธีดังกล่าวจะยิ่งทำให้พฤติกรรมดีๆ ไม่ปรากฏ แต่กลับได้พฤติกรรมไม่พึงประสงค์มาแทน ทั้งยังเป็นการใช้ความรุนแรงต่อเด็ก และถือเป็นการละเมิดสิทธิมนุษย์อีกคนหนึ่ง  ในประเทศไทย คนไทยจำนวนมากยังมีความเชื่อผิดๆ เกี่ยวกับการลงโทษเด็กด้วยความรุนแรงว่า เป็นวิธีที่มีประสิทธิภาพ สอนให้เด็กรู้ถูกรู้ผิด ซึ่งความเชื่อผิดๆ ยังมีอีกมากมาย ดังนี้</p>
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;การอบรมสั่งสอนลูกโดยการลงโทษ ถือเป็นการฝึกระเบียบวินัยให้ได้ผลดีก็จริง 
+                    แต่ก็ไม่จำเป็นต้องใช้วิธีบังคับลงโทษให้เจ็บตัว หรือดุว่าให้เจ็บใจเสมอไป เพราะวิธีดังกล่าวจะยิ่งทำให้พฤติกรรมดีๆ ไม่ปรากฏ 
+                    แต่กลับได้พฤติกรรมไม่พึงประสงค์มาแทน ทั้งยังเป็นการใช้ความรุนแรงต่อเด็ก และถือเป็นการละเมิดสิทธิมนุษย์อีกคนหนึ่ง 
+                    ในประเทศไทยคนไทยจำนวนมากยังมีความเชื่อผิดๆ เกี่ยวกับการลงโทษเด็กด้วยความรุนแรงว่า เป็นวิธีที่มีประสิทธิภาพ สอนให้เด็กรู้ถูกรู้ผิด 
+                    ซึ่งความเชื่อผิดๆ ยังมีอีกมากมาย ดังนี้</p>
                   <p><u>ความเชื่อผิดๆ อย่างที่ 1</u></p>
                   <p class="mycontent">“ฉันก็เคยโดนตีมาแล้ว และก็ไม่เห็นจะเป็นผลร้ายตรงไหน”</p>
                   <p><u>ความเชื่อผิดๆ อย่างที่ 2</u></p>
@@ -144,42 +238,52 @@
                 </div>
               </div>
               <div id="smallsection">
-                  <div class="titleboxvideo">
-                      <h1>คลิปวิดิโอ</h1>
-                  </div>
-                  <div class="videoshow">
-                    <img src="./image/video.png" class="imgright"/>
-                    <a href="https://www.youtube.com/watch?v=O4QloR6W2v4" target="_blank" class="button more">Watch Video</a>
-                  </div>
-                  <div class="titleboxnews">
-                    <h1>ข่าว</h1>
-                  </div>
-                  <div class="contentboxnews">
-                    <p class="mycontent">ช่วยเด็ก 4 ขวบถูกขังในบ้านลำพัง แผลเต็มตัว บอกแม่ตีหนู</p>
-                    <a href="https://www.sanook.com/news/1964862/" target="_blank" >https://www.sanook.com/news/1964862/</a>
-                    <p class="mycontent">สะเทือนใจชาวเน็ต! แม่ใช้เหล็กตีลูกเลือดอาบ ลงโทษที่โดดเรียน</p>
-                    <a href="https://www.sanook.com/news/1919130/" target="_blank" >https://www.sanook.com/news/1919130/</a>
-                  </div>
+                <div class="titleboxvideo">
+                  <h1>คลิปวิดิโอ</h1>
                 </div>
+                <div class="videoshow">
+                  <img src="./image/video.png" class="imgright"/>
+                  <a href="https://www.youtube.com/watch?v=O4QloR6W2v4" target="_blank" class="button more">Watch Video</a>
+                </div>
+                <div class="titleboxnews">
+                  <h1>ข่าว</h1>
+                </div>
+                <div class="contentboxnews">
+                  <p class="mycontent">ช่วยเด็ก 4 ขวบถูกขังในบ้านลำพัง แผลเต็มตัว บอกแม่ตีหนู</p>
+                  <a href="https://www.sanook.com/news/1964862/" target="_blank" >https://www.sanook.com/news/1964862/</a>
+                  <p class="mycontent">สะเทือนใจชาวเน็ต! แม่ใช้เหล็กตีลูกเลือดอาบ ลงโทษที่โดดเรียน</p>
+                  <a href="https://www.sanook.com/news/1919130/" target="_blank" >https://www.sanook.com/news/1919130/</a>
+                </div>
+              </div>
               <div id="smallsection">
-                  <div class="titleboxleft">
-                    <h1>ผลกระทบต่อตัวเด็กเมื่อถูกลงโทษทางร่างกาย</h1>
-                  </div>
-                  <img src="./image/pic4.png" class="imgleft"/>
-                  <div class="contentboxright">
-                    <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;‘รักวัวให้ผูก รักลูกให้ตี’ คือผลพวงจากฝั่งสนับสนุนที่ใช้การสอนแบบนี้มานานปี แต่อาจใช้ไม่ได้ในปัจจุบันนี้ เพราะเข้าข่ายวินัยเชิงลบ – ตีเพื่อให้กลัว แต่ไม่ได้สอนว่าทำไมถึงไม่ดีและไม่ควรทำ
-                      จากการศึกษา วิธีการนี้ใช้ได้ผลในระยะสั้นเท่านั้น ระยะยาวกลับพบว่าการลงโทษด้วยการตี หรือการลงโทษทางร่างกาย (Physical Punishment) ส่งผลกระทบต่อพฤติกรรมและสภาพจิตใจของเด็ก</p>
-                    <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;บทความวิชาการ ‘The Strength of the Causal Evidence Against Physical Punishment of Children and Its Implications for Parents, Psychologists, and Policymakers’
-                      เผยแพร่โดยสมาคมจิตวิทยาอเมริกัน (American Psychological Association) ให้ข้อสรุปว่า แม้อยู่ท่ามกลางบริบทชุมชนที่แตกต่างกัน ต่างภาษา ต่างเชื้อชาติและวัฒนธรรม การลงโทษทางร่างกายส่งผลกระทบเชิงลบต่อเด็กในทุกสังคม ดังนั้นเรื่องนี้จึงไม่ใช่แค่เรื่องของพ่อแม่
-                      แต่เป็นเรื่องที่บุคคลและทุกฝ่ายที่เกี่ยวข้องกับเด็ก ไม่ว่าจะเป็นครู นักจิตวิทยาครอบครัว หรือแม้กระทั่งหน่วยงานที่กำหนดนโยบายระดับชาติควรให้ความสำคัญ
-                      ผลการศึกษาระบุว่าเด็กที่เติบโตขึ้นในครอบครัวที่ใช้การลงโทษทางร่างกาย มีแนวโน้มที่จะมีอารมณ์ก้าวร้าว มีพฤติกรรมเสี่ยง เช่น การมีปัญหาทะเลาะวิวาทใช้ความรุนแรง
-                       มีประสิทธิภาพการรับรู้และการเรียนรู้ต่ำ ความสัมพันธ์ระหว่างเด็กกับผู้ปกครองค่อนข้างห่างเหิน อีกทั้งยังส่งผลต่อสุขภาพจิตของเด็กในระยะยาว
-                       การศึกษานี้จึงเป็นหลักฐานเชิงข้อมูลยืนยันกับผู้ปกครองว่า การตีไม่ใช่ทางออก</p>
-                    </div>
+                <div class="titleboxleft">
+                  <h1>ผลกระทบต่อตัวเด็กเมื่อถูกลงโทษทางร่างกาย</h1>
                 </div>
+                <img src="./image/pic4.png" class="imgleft"/>
+                <div class="contentboxright">
+                  <p class="mycontent"><b>ผลในระยะสั้น</b></p>
+                  <p class="mycontent">&nbsp;&nbsp;<u>ด้านสุขภาพร่างกาย</u></p>
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;มีอาการบาดเจ็บ หรือเป็นโรคผิดปกติต่างๆ เช่น ความผิดปกติเรื่องการทานอาหาร ปวดท้อง และ
+                    ยังขัดขวางพัฒนาการของเด็ก</p>
+                  <p class="mycontent">&nbsp;&nbsp;<u>ด้านสุขภาพจิตใจ</u></p>
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;เด็กอาจรู้สึกเศร้าเสียใจ เสียความภูมิใจในคุณค่าของตนเอง สิ้นหวัง จนอาจมีอาการเศร้าซึมรุนแรงวิตกกังวล 
+                    มีปัญหาการเข้าสังคม จน มีแนวโน้มฆ่าตัวตาย หรือ อาจกลายเป็น เด็กมีพฤติกรรมก้าวร้าว ไม่เคารพกฎระเบียบ เนื่องจากความโกรธหรือความเครียดสะสม</p>
+
+                  <p class="mycontent"><b>ผลในระยะยาว</b></p>
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;เด็กมีแนวโน้มที่จะโตเป็นผู้ใหญ่ที่ใช้ความรุนแรงต่อผู้อื่น เพราะคิดว่าความรุนแรงเป็นเรื่องปกติ 
+                    อาจมีอาการก้าวร้าวชอบรังแกเพื่อน มีพฤติกรรมทารุณทางเพศ ทารุณกรรมเด็ก ทำร้ายคู่ครอง และอาจจะสืบทอดพฤติกรรมการลงโทษเด็กด้วยความรุนแรง 
+                    เมื่อได้เป็นพ่อคนแม่คนบ้าง ทำให้เกิดการถ่ายทอดพฤติกรรมรุนแรงจากรุ่นหนึ่งไปสู่รุ่นต่อไป</p>
+                  <p class="mycontent">&nbsp;&nbsp;&nbsp;&nbsp;เด็กมีแนวโน้มที่จะมีพฤติกรรมที่ไม่เหมาะสม เช่น นิยมชมชอบการกระทำที่ผิดกฏหมาย 
+                    เสพติดการใช้สารเสพติดต่างๆ ไปจนถึงการเข้าร่วม หรือกลายเป็นผู้ก่ออาชญากรรม</p>
+                  <hr>
+                  <p class="source">ที่มา : รายงานขององค์การยูนิเซฟเรื่อง “การเลี้ยงดูโดยมิชอบต่อเด็ก” (Child Maltreatment: Prevalence, Incidence and 
+                    Consequences in East Asia and Pacific), 2012</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
