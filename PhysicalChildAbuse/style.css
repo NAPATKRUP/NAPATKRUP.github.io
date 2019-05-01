@@ -262,6 +262,26 @@ td:nth-child(odd) {
     font-size: 15px;
 }
 
+#en {
+    display: none;
+}
+
+#th {
+    display: block;
+}
+
+ul li {
+    width: auto;
+    display: inline;
+}
+
+.social {
+    position: fixed;
+    right: 2%;
+    bottom: 2vh;
+    z-index: 1;
+}
+
 .button {
     padding: 20px 40px;
     border-color: #f3f3f3;
@@ -287,13 +307,6 @@ td:nth-child(odd) {
     background-color: rgba(255,255,255,0.7);
 }
 
-#en {
-    display: none;
-}
-
-#th {
-    display: block;
-}
 
 .button_lang {
     background-color: #444;
@@ -305,17 +318,6 @@ td:nth-child(odd) {
 .button_lang:hover, .current_lang {
     background-color: #777;   
     transition: background-color .3s ease-in-out;
-}
-ul li {
-    width: auto;
-    display: inline;
-}
-
-.social {
-    position: fixed;
-    right: 2%;
-    bottom: 2vh;
-    z-index: 1;
 }
 
 .nav {
@@ -355,52 +357,6 @@ ul li {
 }
 
 @media (max-width:960px) {
-    .nav > .nav-links > a {
-        display: inline-block;
-        padding: 20px 60px 1px 70px;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-        font-size: 2.5vmax;
-    }
-    .nav > .nav-btn {
-        display: inline-block;
-        position: absolute;
-        right: 0px;
-        top: 0px;
-    }
-    .nav > .nav-btn > label {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        padding-top: 25px;
-    }
-    .nav > .nav-btn > label > span {
-        display: block;
-        width: 3vmax;
-        height: 1.5vmax;
-        border-top: 0.5vmax solid #eee;
-    }
-    .nav > .nav-links {
-        position: absolute;
-        display: block;
-        width: 100%;
-        background-color: black;
-        transition: all 0.3s ease-in;
-        overflow-y: hidden;
-        top: 70px;
-    }
-    .nav > .nav-links > a {
-        display: block;
-        width: 100%;
-    }
-    .nav > #nav-check:not(:checked) ~ .nav-links {
-        height: 0px;
-    }
-    .nav > #nav-check:checked ~ .nav-links {
-        height: 300px;
-    }
-
     a {
         font-size: 12px;
     }
@@ -453,5 +409,50 @@ ul li {
     ul li {
         display: block;
         margin: 10px;
+    }
+    .nav > .nav-links > a {
+        display: inline-block;
+        padding: 20px 60px 1px 70px;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        font-size: 2.5vmax;
+    }
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding-top: 25px;
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 3vmax;
+        height: 1.5vmax;
+        border-top: 0.5vmax solid #eee;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: black;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 70px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: 300px;
     }
 }
