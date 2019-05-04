@@ -187,6 +187,7 @@ td:nth-child(odd) {
 .contentboxstack {
     position: relative;
     left: 10%;
+    top: -40vh;
     background: white;
     padding: 3%;
     width: 40%;
@@ -242,7 +243,20 @@ td:nth-child(odd) {
     border-bottom: 10px solid #204a79;
 }
 
-.myabout h1 {
+.mystatic {
+    position: relative;
+    left: 10%;
+    top: 5vh;
+    width: 80%;
+    height: 70vh;
+    background: white;
+    padding: 2%;
+    border-top: 10px solid #204a79;
+    border-bottom: 10px solid #204a79;
+}
+
+
+.myabout h1, .mystatic h1 {
     background: black;
     color: white;
     font-size: 30px;
@@ -356,7 +370,7 @@ ul li {
     display: none;
 }
 
-@media (max-width:1100px) {
+@media (max-width:1400px) {
     a {
         font-size: 12px;
     }
@@ -428,7 +442,7 @@ ul li {
         font-weight: bold;
         text-decoration: none;
         color: white;
-        font-size: 2.5vmax;
+        font-size: 20px;
     }
 
     .nav > .nav-btn {
@@ -447,9 +461,9 @@ ul li {
 
     .nav > .nav-btn > label > span {
         display: block;
-        width: 3vmax;
-        height: 1.5vmax;
-        border-top: 0.5vmax solid #eee;
+        width: 25px;
+        height: 13px;
+        border-top: 5px solid #eee;
     }
 
     .nav > .nav-links {
@@ -472,7 +486,7 @@ ul li {
     }
 
     .nav > #nav-check:checked ~ .nav-links {
-        height: 400px;
+        height: 450px;
     }
 
 }
