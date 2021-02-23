@@ -1,0 +1,99 @@
+/* First Load */
+#firstPage {
+  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1.5s; /* Firefox < 16 */
+  -ms-animation: fadein 1.5s; /* Internet Explorer */
+  -o-animation: fadein 1.5s; /* Opera < 12.1 */
+  animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Typing */
+#typingText {
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+#border {
+  border-bottom: solid 3px rgba(50, 50, 50, 0.75);
+  position: absolute;
+  right: -7px;
+  width: 20px;
+}
+
+/* Animation */
+#typingText {
+  animation: animated-text 2s steps(30, end) 1s 1 normal both;
+}
+
+#border {
+  animation: animated-cursor 600ms steps(30, end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+  from {
+    border-bottom-color: rgba(50, 50, 50, 0.75);
+  }
+  to {
+    border-bottom-color: transparent;
+  }
+}
