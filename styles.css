@@ -52,6 +52,10 @@
   }
 }
 
+.layoutPage {
+  min-height: 100vh;
+}
+
 /* Typing */
 #typingText {
   height: 40px;
