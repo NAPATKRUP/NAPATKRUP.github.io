@@ -1,26 +1,144 @@
 {
-    "skills": ["Git", "Docker", "Python", "Java", "C", "Swift", "PHP", "SQL", "HTML", "CSS", "JavaScript",
-            "TypeScript", "Node.js", "Vue.js", "React.js", "React Native", "Flutter", "GraphQL",
-            "Django", "Spring", "Bootstrap", "Material-UI", "Tailwin", "IoT", "RPA", "PWAs", "OOP", "AWS",
-            "Firebase", "Ansible"],
-    "projects": [
-            {"project_name": "The-Movies", "description": "This repository consists of codes of 'PROBLEM SOLVING IN INFORMATION TECHNOLOGY' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/The-Movies", "year": "2018"},
-            {"project_name": "What_This", "description": "This repository consists of codes of Swift Workshop, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/What_This", "year": "2019"},
-            {"project_name": "Smart-Home-Monitoring", "description": "This repository consists of codes of 'COMPUTER PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/Smart-Home-Monitoring", "year": "2019"},
-            {"project_name": "Restaurant-Order-Management", "description": "This repository consists of codes of 'OBJECT-ORIENTED PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/Restaurant-Order-Management", "year": "2019"},
-            {"project_name": "Preprogramming62Hotmail", "description": "This repository consists of codes of Special Project by Vue.js", "git": "https://github.com/NAPATKRUP/Preprogramming62Hotmail", "year": "2019"},
-            {"project_name": "PhysicalChildAbuse", "description": "This repository consists of codes of 'MULTIMEDIA TECHNOLOGY' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/PhysicalChildAbuse", "year": "2019"},
-            {"project_name": "Periodic-Table", "description": "This repository consists of codes of 'WEB TECHNOLOGY' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/Periodic-Table", "year": "2019"},
-            {"project_name": "HitDancingDuck", "description": "This repository consists of codes of 'MULTIMEDIA TECHNOLOGY' Mini Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/HitDancingDuck", "year": "2019"},
-            {"project_name": "Shopee2", "description": "This repository consists of codes of 'SERVICE-ORIENTED PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/shopee2", "year": "2020"},
-            {"project_name": "Shopee Daily Report | RPA-Project", "description": "This repository consists of codes of 'ROBOTIC PROCESS AUTOMATION' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/Shopee-Daily-Report", "year": "2020"},
-            {"project_name": "LookNiOnline", "description": "This repository consists of codes of 'PROGRESSIVE WEB APP' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/LookNiOnline", "year": "2020"},
-            {"project_name": "KonLaKrueng", "description": "This repository consists of codes of 'YWC#18' work", "git": "https://github.com/NAPATKRUP/KonLaKrueng", "year": "2020"},
-            {"project_name": "KodVote", "description": "This repository consists of codes of 'WEB PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/KodVote", "year": "2020"},
-            {"project_name": "Human Interface Design-Thaichana", "description": "'HUMAN INTERFACE DESIGN' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "", "year": "2020"},
-            {"project_name": "Glossary", "description": "This repository consists of codes of 'MOBILE DEVICE PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/Glossary", "year": "2020"},
-            {"project_name": "Furniture-Shop-Management", "description": "This repository consists of codes of 'WEB PROGRAMMING', 'DATABASE SYSTEM CONCEPTS' and 'INFORMATION SYSTEMS ANALYSIS AND DESIGN' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/Furniture-Shop-Management", "year": "2020"},
-            {"project_name": "SpaceX", "description": "This repository consists of codes of 'FULL-STACK WEB DEVELOPER' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "https://github.com/NAPATKRUP/SpaceX", "year": "2021"},
-            {"project_name": "Online Manga", "description": "This repository consists of codes of 'CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).", "git": "", "year": "Coming Soon..."}
-        ]
+  "skills": [
+    "Git",
+    "Docker",
+    "Python",
+    "Java",
+    "C",
+    "Swift",
+    "PHP",
+    "SQL",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Vue.js",
+    "React.js",
+    "React Native",
+    "Flutter",
+    "GraphQL",
+    "Django",
+    "Spring",
+    "Bootstrap",
+    "Material-UI",
+    "Tailwin",
+    "IoT",
+    "RPA",
+    "PWAs",
+    "OOP",
+    "AWS",
+    "Firebase",
+    "Ansible"
+  ],
+  "projects": [
+    {
+      "project_name": "The-Movies",
+      "description": "This repository consists of codes of 'PROBLEM SOLVING IN INFORMATION TECHNOLOGY' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/The-Movies",
+      "year": "2018"
+    },
+    {
+      "project_name": "What_This",
+      "description": "This repository consists of codes of Swift Workshop, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/What_This",
+      "year": "2019"
+    },
+    {
+      "project_name": "Smart-Home-Monitoring",
+      "description": "This repository consists of codes of 'COMPUTER PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/Smart-Home-Monitoring",
+      "year": "2019"
+    },
+    {
+      "project_name": "Restaurant-Order-Management",
+      "description": "This repository consists of codes of 'OBJECT-ORIENTED PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/Restaurant-Order-Management",
+      "year": "2019"
+    },
+    {
+      "project_name": "Preprogramming62Hotmail",
+      "description": "This repository consists of codes of Special Project by Vue.js",
+      "git": "https://github.com/NAPATKRUP/Preprogramming62Hotmail",
+      "year": "2019"
+    },
+    {
+      "project_name": "PhysicalChildAbuse",
+      "description": "This repository consists of codes of 'MULTIMEDIA TECHNOLOGY' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/PhysicalChildAbuse",
+      "year": "2019"
+    },
+    {
+      "project_name": "Periodic-Table",
+      "description": "This repository consists of codes of 'WEB TECHNOLOGY' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/Periodic-Table",
+      "year": "2019"
+    },
+    {
+      "project_name": "HitDancingDuck",
+      "description": "This repository consists of codes of 'MULTIMEDIA TECHNOLOGY' Mini Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/HitDancingDuck",
+      "year": "2019"
+    },
+    {
+      "project_name": "Shopee2",
+      "description": "This repository consists of codes of 'SERVICE-ORIENTED PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/shopee2",
+      "year": "2020"
+    },
+    {
+      "project_name": "Shopee Daily Report | RPA-Project",
+      "description": "This repository consists of codes of 'ROBOTIC PROCESS AUTOMATION' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/Shopee-Daily-Report",
+      "year": "2020"
+    },
+    {
+      "project_name": "LookNiOnline",
+      "description": "This repository consists of codes of 'PROGRESSIVE WEB APP' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/LookNiOnline",
+      "year": "2020"
+    },
+    {
+      "project_name": "KonLaKrueng",
+      "description": "This repository consists of codes of 'YWC#18' work",
+      "git": "https://github.com/NAPATKRUP/KonLaKrueng",
+      "year": "2020"
+    },
+    {
+      "project_name": "KodVote",
+      "description": "This repository consists of codes of 'WEB PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/KodVote",
+      "year": "2020"
+    },
+    {
+      "project_name": "Human Interface Design-Thaichana",
+      "description": "'HUMAN INTERFACE DESIGN' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "",
+      "year": "2020"
+    },
+    {
+      "project_name": "Glossary",
+      "description": "This repository consists of codes of 'MOBILE DEVICE PROGRAMMING' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/Glossary",
+      "year": "2020"
+    },
+    {
+      "project_name": "Furniture-Shop-Management",
+      "description": "This repository consists of codes of 'WEB PROGRAMMING', 'DATABASE SYSTEM CONCEPTS' and 'INFORMATION SYSTEMS ANALYSIS AND DESIGN' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/Furniture-Shop-Management",
+      "year": "2020"
+    },
+    {
+      "project_name": "SpaceX",
+      "description": "This repository consists of codes of 'FULL-STACK WEB DEVELOPER' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "https://github.com/NAPATKRUP/SpaceX",
+      "year": "2021"
+    },
+    {
+      "project_name": "Online Manga",
+      "description": "This repository consists of codes of 'CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
+      "git": "",
+      "year": "Coming Soon..."
+    }
+  ]
 }
