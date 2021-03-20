@@ -9,7 +9,7 @@ xmlhttp.onreadystatechange = function () {
     renderProjects(data.projects);
   }
 };
-xmlhttp.open("GET", "./data.json", true);
+xmlhttp.open("GET", "../data.json", true);
 xmlhttp.send();
 
 function renderSkills(data) {
