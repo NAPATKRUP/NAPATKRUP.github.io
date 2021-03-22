@@ -139,6 +139,12 @@
       "description": "This repository consists of codes of 'CLOUD-BASED ENTERPRISE APPLICATION DEVELOPMENT' Project, Faculty of Information Technology, King Mongkut's Institute of Technology Ladkrabang (KMITL).",
       "git": "",
       "year": "Coming Soon..."
+    },
+    {
+      "project_name": "ExchangeRate",
+      "description": "This repository consists of codes of Special Project by Flutter.",
+      "git": "https://github.com/NAPATKRUP/ExchangeRate",
+      "year": "Coming Soon..."
     }
   ]
 }
